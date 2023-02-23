@@ -62,7 +62,7 @@ class DetailView extends StatelessWidget {
                     ),
                  
             SizedBox(
-              height: 4,
+              height: 18,
             ),
          detailStackImageTile(detailVM: detailVM),
          SizedBox(

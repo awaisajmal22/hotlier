@@ -103,9 +103,10 @@ class ExploreView2 extends StatelessWidget {
                Obx(
                 ()=> SizedBox(
                   width: SizeConfig.widthMultiplier * 100,
-                  height: SizeConfig.heightMultiplier * 70,
+                  height: SizeConfig.heightMultiplier * 70.8,
                   // color: AppColor.cyan,
                   child: exploreVM.check.value == false ? GridView.builder(
+                    padding: EdgeInsets.only(bottom: 10),
                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                        
                        crossAxisSpacing: 10,
@@ -137,6 +138,7 @@ class ExploreView2 extends StatelessWidget {
                         ),
                       );
                     }) :  ListView.builder(
+                     
                         itemCount: exploreVM.prdocutList.length,
                         itemBuilder: (context, index){
                         return explore2ListViewTile(

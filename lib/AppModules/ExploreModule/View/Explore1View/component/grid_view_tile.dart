@@ -13,8 +13,9 @@ Widget gridViewTile(BuildContext context, {required ExploreViewModel exploreVM, 
       ()=> Container(
         
         margin: EdgeInsets.symmetric( horizontal:  5,),
-    height: backButtonCheck == false ? SizeConfig.heightMultiplier * 70 : SizeConfig.heightMultiplier * 65,
+    height: backButtonCheck == false ? SizeConfig.heightMultiplier * 70.7 : SizeConfig.heightMultiplier * 65,
     child: exploreVM.check.value == false ?  GridView.builder(
+      padding: const EdgeInsets.only(bottom: 10),
                           shrinkWrap: true,
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(

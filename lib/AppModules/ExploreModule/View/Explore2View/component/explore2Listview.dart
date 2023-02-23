@@ -43,8 +43,8 @@ Widget explore2ListViewTile(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         mainAxisAlignment: MainAxisAlignment.center,
                                         children: [
-                                          appText(text: title, textColor: AppColor.textBlack, fontSize: 12, fontweight: FontWeight.w500),
-                                          appText(text: price, textColor: AppColor.textBlack.withOpacity(0.6), fontSize: 12, fontweight: FontWeight.w400),
+                                          appText(text: title, textColor: AppColor.textBlack, fontSize: 20, fontweight: FontWeight.w500),
+                                          appText(text: price, textColor: AppColor.textBlack.withOpacity(0.6), fontSize: 20, fontweight: FontWeight.w400),
                                         ],
                                       )
                                     )

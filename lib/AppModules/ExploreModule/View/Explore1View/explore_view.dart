@@ -20,7 +20,6 @@ class ExploreView extends StatelessWidget {
   Widget build(BuildContext context) {
     
     return Scaffold(
-      backgroundColor: AppColor.white,
       body: SafeArea(
           child: ListView(
             physics: NeverScrollableScrollPhysics(),
