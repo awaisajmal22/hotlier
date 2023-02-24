@@ -19,6 +19,7 @@ import '../../../CartRequestModule/View/CartRequestView/component/formField.dart
 import '../../../CartRequestModule/View/CartRequestView/component/scope_tile.dart';
 import '../../../CartRequestModule/View/CartRequestView/component/select_project_tile.dart';
 import '../../../CartRequestModule/View/SelectProfessionalView/select_professional_view.dart';
+import 'component/pictures_listView_tile.dart';
 import 'component/select_professionals_tile.dart';
 import 'package:path/path.dart' as path;
 
@@ -217,41 +218,18 @@ class ProfessionalRequestView extends StatelessWidget {
                               itemCount: professionalProjectRequestVM.newimagesList!.length,
                               scrollDirection: Axis.horizontal,
                               itemBuilder: (context, index){
-                              return  professionalProjectRequestVM.newimagesList!.isNotEmpty ?   Container(
-                                    alignment: Alignment.center,
-                                    decoration: BoxDecoration(
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: AppColor.black.withOpacity(0.6)
-                                        )
-                                      ],
-                                      borderRadius: BorderRadius.circular(8),
-                                      image: DecorationImage(image: FileImage(File(professionalProjectRequestVM.newimagesList![index].path)),fit: BoxFit.cover)
-                                    ),
-                                    margin: EdgeInsets.symmetric(horizontal: 8.5),
-                                    padding: EdgeInsets.all( 8),
-                                    height: 97,
-                                    width: 98,
-                                    child:  Column(
-                                      crossAxisAlignment: CrossAxisAlignment.center,
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      // mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                       
-                                        Text( 
-                                              maxLines: 1,
-                                              overflow: TextOverflow.ellipsis,
-                                              path.basename(professionalProjectRequestVM.newimagesList![index].path), 
-                                            style: const TextStyle(
-                                              color: AppColor.white,
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.w700
-                                            ),),
-                                            appText(text: professionalProjectRequestVM.getFileSizeString(bytes: professionalProjectRequestVM.newimagesList![index].path.length), textColor: AppColor.white, fontSize: 12, fontweight: FontWeight.w700)
-                                                          
-                                      ],
-                                    ) 
-                                  
+                              return  professionalProjectRequestVM.newimagesList!.isNotEmpty ?   Obx(
+                                ()=> picturesListViewTile(
+                                  size: professionalProjectRequestVM.getFileSizeString(bytes: professionalProjectRequestVM.newimagesList![index].path.length,),
+                                  imageUrl: professionalProjectRequestVM.newimagesList![index].path,
+                                  index: index,
+                                  selectedImageIndex: professionalProjectRequestVM.selectedImageIndex.value,
+                                  onTap: (){
+                                    professionalProjectRequestVM.selectedImageIndex.value = index;
+                                    print(professionalProjectRequestVM.selectedImageIndex.value);
+                              
+                                  }
+                                  ),
                               ) : const SizedBox();
                             }),
                         ),
@@ -267,6 +245,8 @@ class ProfessionalRequestView extends StatelessWidget {
         )),
     );
   }
+
+  
 
   
 }
