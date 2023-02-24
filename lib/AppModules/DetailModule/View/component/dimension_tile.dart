@@ -128,12 +128,10 @@ Widget dimentionTile({
           ),
           child: Obx(()=> FittedBox(
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 appText(text: detailVM.dimension.value, textColor: Color(0xff5D5D5D), fontSize: 14, fontweight: FontWeight.w400),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 5),
-                        child: Icon(Icons.keyboard_arrow_down,  color: AppColor.gery5D),
-                      )
+                      Icon(Icons.keyboard_arrow_down,  color: AppColor.gery5D)
           
               ],
             ),
