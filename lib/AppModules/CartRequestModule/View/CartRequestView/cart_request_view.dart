@@ -19,6 +19,7 @@ import 'package:intl/intl.dart';
 import '../../../../common/app_Text.dart';
 import '../../../../common/app_button.dart';
 import '../../../../common/app_color.dart';
+import 'component/picture_listView_tile.dart';
 import 'component/select_project_tile.dart';
 import 'package:path/path.dart' as path;
 
@@ -245,44 +246,16 @@ class CartRequestView extends StatelessWidget {
                             itemCount: cartrequestVM.newimagesList!.length,
                             scrollDirection: Axis.horizontal,
                             itemBuilder: (context, index){
-                            return cartrequestVM.newimagesList!.isNotEmpty ? Container(
-                                  alignment: Alignment.center,
-                                  
-                                  decoration: BoxDecoration(
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: AppColor.black.withOpacity(0.6)
-                                      )
-                                    ],
-                                    borderRadius: BorderRadius.circular(8),
-                                    image: DecorationImage(
-                                      image: FileImage(File(cartrequestVM.newimagesList![index].path)),fit: BoxFit.cover) 
-                                  ),
-                                  margin: EdgeInsets.symmetric(horizontal: 8.5),
-                                  padding: EdgeInsets.all(8),
-                                  height: 97,
-                                  width: 98,
-                                  child:  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      
-                                      
-                                      Text( 
-                                        maxLines: 1,
-                                        overflow: TextOverflow.ellipsis,
-                                        path.basename(cartrequestVM.newimagesList![index].path), 
-                                      style: const TextStyle(
-                                        color: AppColor.white,
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w700
-                                      ),),
-                                      appText(text: cartrequestVM.getFileSizeString(bytes: cartrequestVM.newimagesList![index].path.length), textColor: AppColor.white, fontSize: 12, fontweight: FontWeight.w700)
-                                                    
-                                    ],
-                                  ) 
-                                
+                            return cartrequestVM.newimagesList!.isNotEmpty ? Obx(
+                              ()=> pictureListViewTile(
+                                imageUrl: cartrequestVM.newimagesList![index].path,
+                                index: index,
+                                selectedImageIndex: cartrequestVM.selectedImageIndex.value,
+                                onTap: (){
+                                  cartrequestVM.selectedImageIndex.value = index;
+                                },
+                                size: cartrequestVM.getFileSizeString(bytes: cartrequestVM.newimagesList![index].path.length)
+                              ),
                             ) : const SizedBox();
                           }),
                         ),
@@ -298,5 +271,6 @@ class CartRequestView extends StatelessWidget {
     );
   }
 
+  
   
 }

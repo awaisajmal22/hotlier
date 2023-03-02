@@ -130,13 +130,16 @@ class SetupArtis2View extends StatelessWidget {
                     SizedBox(
                       height: 22,
                     ),
-                    Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          richTextTile(label: 'Specialties: ', title: 'Architecture'),
-                          richTextTile(label: 'Experience: ', title: '3 Years')
-                        ],
-                      ),
+                    SizedBox(
+                      width: SizeConfig.widthMultiplier * 100,
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            richTextTile(label: 'Specialties: ', title: 'Architecture'),
+                            richTextTile(label: 'Experience: ', title: '3 Years')
+                          ],
+                        ),
+                    ),
                        SizedBox(
                     height: SizeConfig.heightMultiplier * 1,
                   ),

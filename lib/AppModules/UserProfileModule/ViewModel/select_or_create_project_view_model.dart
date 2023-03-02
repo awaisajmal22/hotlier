@@ -12,7 +12,7 @@ class RequestProjectViewModel extends GetxController{
   RxBool downloadImageCheck = false.obs;
   RxString projectName = 'Select Project'.obs;
   RxString scope = 'Scope'.obs;
-
+  RxInt selectedImageIndex = (-1).obs;
   
    final projectController = TextEditingController();
   RxList<AllRequestModel> allRequestList = <AllRequestModel>[

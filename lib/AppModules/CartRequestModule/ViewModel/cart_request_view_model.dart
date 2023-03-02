@@ -20,7 +20,7 @@ class CartRequestViewModel extends GetxController{
   RxString projectName = 'Select Project'.obs;
   Rx<DateTime> choosedDate = DateTime.now().obs;
   RxString scope = 'Scope'.obs;
-
+  RxInt selectedImageIndex = (-1).obs;
   // RxList<SelectProfessionalModel> selectProfessionalsList = <SelectProfessionalModel>[
   //   SelectProfessionalModel(check: false.obs, name: 'Jack', description: 'Alegria', imageUrl: 'https://images.pexels.com/photos/15494499/pexels-photo-15494499.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load'),
   //   SelectProfessionalModel(check: false.obs, name: 'John', description: 'Brazil', imageUrl: 'https://images.pexels.com/photos/7505201/pexels-photo-7505201.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load'),

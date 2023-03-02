@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:hotlier/AppModules/UserProfileModule/ViewModel/select_or_create_project_view_model.dart';
 import 'package:hotlier/common/size_config.dart';
 
 import '../../../../common/app_Text.dart';
@@ -16,6 +18,7 @@ class YourRequestCartView extends StatelessWidget {
   String? date;
   String? imageUrl;
   String? name;
+  final requestProjectVM = Get.put(RequestProjectViewModel());
 
   @override
   Widget build(BuildContext context) {
@@ -93,11 +96,18 @@ class YourRequestCartView extends StatelessWidget {
                           itemCount: 8,
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (context, index){
-                          return  picturesTile(
-                            name: 'SLlsS',
-                            size: 'ADDADA',
-                          imageUrl: "https://cdn.pixabay.com/photo/2021/10/01/18/53/corgi-6673343__340.jpg"
-                        );
+                          return  Obx(
+                            ()=> picturesTile(
+                              onTap: (){
+                                requestProjectVM.selectedImageIndex.value = index;
+                              },
+                              index: index,
+                              selectedImageIndex: requestProjectVM.selectedImageIndex.value,
+                              name: 'SLlsS',
+                              size: 'ADDADA',
+                            imageUrl: "https://cdn.pixabay.com/photo/2021/10/01/18/53/corgi-6673343__340.jpg"
+                                                  ),
+                          );
                         }),
                       ),
                        
