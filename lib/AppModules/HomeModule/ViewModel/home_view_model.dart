@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hotlier/AppModules/HomeModule/Services/home_services.dart';
 
 class HomeViewModel extends GetxController{
   final controller = PageController();
   RxInt productListIndex = (-1).obs;
   RxInt professionalListIndex = (-1).obs;
   RxInt carouselIndex = 1.obs;
+
+  @override
+ Future<void> onInit() async {
+    // TODO: implement onInit
+    
+    super.onInit();
+    getHomeData();
+  }
   List images = [
     'https://images.pexels.com/photos/14005887/pexels-photo-14005887.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
     'https://images.pexels.com/photos/14005887/pexels-photo-14005887.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
@@ -39,7 +48,7 @@ class HomeViewModel extends GetxController{
   }
  
 }
-
+ 
 class ProductList{
   final String icon;
   final String name;

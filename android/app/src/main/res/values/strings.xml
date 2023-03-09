@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">"hotlier"</string>
+    <string name="facebook_app_id">937024810997732</string>
+    <string name="fb_login_protocol_scheme">fb937024810997732</string>
+<string name="facebook_client_token">8ab65d52b05389cc3b64ead975beef85</string>
+</resources>

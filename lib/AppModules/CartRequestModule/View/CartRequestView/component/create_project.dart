@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hotlier/AppModules/CartRequestModule/View/CartRequestView/component/formField.dart';
 import 'package:hotlier/AppModules/CartRequestModule/ViewModel/cart_request_view_model.dart';
-import 'package:hotlier/AppModules/UserProfileModule/ViewModel/select_or_create_project_view_model.dart';
+import 'package:hotlier/AppModules/UserProfileModule/CreateOrSelectProject/ViewModel/select_or_create_project_view_model.dart';
 
 import '../../../../../common/app_Text.dart';
 import '../../../../../common/app_button.dart';

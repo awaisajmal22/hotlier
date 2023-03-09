@@ -8,7 +8,7 @@ import 'package:hotlier/AppModules/SetupArtistModule/SetupArtist2/View/component
 import 'package:hotlier/AppModules/SetupArtistModule/SetupArtist2/View/component/richtext_tile.dart';
 import 'package:hotlier/AppModules/SetupArtistModule/SetupArtist2/View/component/staggeredTile.dart';
 import 'package:hotlier/AppModules/SetupArtistModule/VIewModel/setupArtist2_view_model.dart';
-import 'package:hotlier/AppModules/UserProfileModule/View/Profile/CreateOrSelectProject/create_or_select_project_view.dart';
+import 'package:hotlier/AppModules/UserProfileModule/CreateOrSelectProject/View/create_or_select_project_view.dart';
 import 'package:hotlier/common/app_Text.dart';
 import 'package:hotlier/common/size_config.dart';
 

@@ -12,7 +12,7 @@ import '../../../../common/app_Text.dart';
 import '../../../../common/app_button.dart';
 import '../../../../common/app_color.dart';
 import '../../../ProfessionalsProjectModule/View/ProfessionalProjectRequest/component/select_professionals_tile.dart';
-import '../../../UserProfileModule/ViewModel/select_or_create_project_view_model.dart';
+import '../../../UserProfileModule/CreateOrSelectProject/ViewModel/select_or_create_project_view_model.dart';
 import 'component/select_professionals_tile.dart';
 
 class SelectProfessionalView extends StatelessWidget {

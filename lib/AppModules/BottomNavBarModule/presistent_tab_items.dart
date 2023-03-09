@@ -7,7 +7,7 @@ import 'package:hotlier/AppModules/ExploreModule/View/Explore1View/explore_view.
 
 import '../FavoriteModule/View/favorite_view.dart';
 import '../HomeModule/View/home_view.dart';
-import '../UserProfileModule/View/Profile/user_profile_view.dart';
+import '../UserProfileModule/Profile/View/user_profile_view.dart';
 import 'controller.dart';
 import 'presistent_bottom_bar.dart';
 

@@ -11,7 +11,9 @@ TextOverflow textOverflow = TextOverflow.clip,
 }){
   return Text(
     overflow: textOverflow,
-    text,textAlign: textAlign, style:  TextStyle(color: textColor, fontSize: fontSize, fontWeight: fontweight),
+    text,textAlign: textAlign, style:  TextStyle(color: textColor, fontSize: fontSize, fontWeight: fontweight,
+    fontFamily: 'SF Pro Display'
+    ),
   
   );
 }

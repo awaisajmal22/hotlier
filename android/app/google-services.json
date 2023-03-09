@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "312300553157",
+    "project_id": "hotlier",
+    "storage_bucket": "hotlier.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312300553157:android:679ee1036155abe05c01ac",
+        "android_client_info": {
+          "package_name": "com.example.hotlier"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "312300553157-0fno54349vcjh0gn08revboed1ubgu2q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBIw7ghb1425erstEVNp6z6_nB9nNHvkE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "312300553157-0fno54349vcjh0gn08revboed1ubgu2q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

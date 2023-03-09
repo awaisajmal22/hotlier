@@ -19,6 +19,9 @@ Widget titleTile(BuildContext context, {required String title, required String s
                         Column(
                           children: [
                         appText(text: title.toUpperCase(), textColor: AppColor.textBlack.withOpacity(0.6), fontSize: 20, fontweight: FontWeight.w400),
+                        SizedBox(
+                          height: 5,
+                        ),
                          Align(
                     alignment: Alignment.topCenter,
                     child: appText(text: subtitle, fontSize: 24, fontweight: FontWeight.w700, textColor: AppColor.textBlack)),

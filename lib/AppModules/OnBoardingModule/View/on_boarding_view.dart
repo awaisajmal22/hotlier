@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
-import 'package:hotlier/AppModules/AuthModule/View/login/login_view.dart';
+import 'package:hotlier/AppModules/AuthModule/login/View/login_view.dart';
 import 'package:hotlier/AppModules/OnBoardingModule/ViewModel/onBoarding_view_model.dart';
 import 'package:hotlier/common/app_Text.dart';
 import 'package:hotlier/common/app_color.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hotlier/AppModules/AuthModule/View/login/login_view.dart';
+import 'package:hotlier/AppModules/AuthModule/login/View/login_view.dart';
 
 class OnBoardingViewModel extends GetxController{
   RxList<dynamic> onboardingImage = [

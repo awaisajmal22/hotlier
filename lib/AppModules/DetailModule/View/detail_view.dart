@@ -12,15 +12,15 @@ import 'package:hotlier/AppModules/DetailModule/View/component/customization_til
 import 'package:hotlier/AppModules/DetailModule/View/component/dimension_tile.dart';
 import 'package:hotlier/AppModules/DetailModule/View/component/material_tile.dart';
 import 'package:hotlier/AppModules/DetailModule/View/component/stack_image_tile.dart';
-import 'package:hotlier/AppModules/UserProfileModule/View/YourRequest/your_request_cart_view.dart';
+import 'package:hotlier/AppModules/UserProfileModule/YourRequest/your_request_cart_view.dart';
 import 'package:hotlier/common/TextField/text_field.dart';
 import 'package:hotlier/common/app_Text.dart';
 import 'package:hotlier/common/app_color.dart';
 import 'package:hotlier/common/size_config.dart';
 
 import '../../../common/app_button.dart';
-import '../../UserProfileModule/View/Profile/Request/request_View.dart';
-import '../../UserProfileModule/View/Profile/CreateOrSelectProject/create_or_select_project_view.dart';
+import '../../UserProfileModule/Request/View/request_View.dart';
+import '../../UserProfileModule/CreateOrSelectProject/View/create_or_select_project_view.dart';
 import 'component/description_tile.dart';
 import 'component/title_tile.dart';
 

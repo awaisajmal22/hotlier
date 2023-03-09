@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:hotlier/AppModules/UserProfileModule/View/Notification/notification_view.dart';
+import 'package:hotlier/AppModules/UserProfileModule/Notification/View/notification_view.dart';
 
 import '../../../../common/app_Text.dart';
 import '../../../../common/app_button.dart';

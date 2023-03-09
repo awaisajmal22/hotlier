@@ -5,7 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gallery_saver/gallery_saver.dart';
 import 'package:get/get.dart';
 import 'package:hotlier/AppModules/ProfessionalsProjectModule/ViewModel/professionals_project_request_view_model.dart';
-import 'package:hotlier/AppModules/UserProfileModule/ViewModel/select_or_create_project_view_model.dart';
+import 'package:hotlier/AppModules/UserProfileModule/CreateOrSelectProject/ViewModel/select_or_create_project_view_model.dart';
 import 'package:intl/intl.dart';
 
 import '../../../../common/app_Text.dart';
