@@ -66,7 +66,7 @@ class API {
         options: DIO.Options(headers: {
           // if (firebaseToken != "")
           //   "Authorization": "Firebase ${firebaseToken.toString()}",
-          'accept': '*/*',
+          'accept': 'application/json',
           "Authorization": "Bearer ${token.toString()}",
         }),
       )

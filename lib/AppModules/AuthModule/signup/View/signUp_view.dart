@@ -24,39 +24,38 @@ String userType;
       backgroundColor: AppColor.whiteF5,
       body: Form(
         key: signupVM.formKey,
-        child: SingleChildScrollView(
-          physics: const NeverScrollableScrollPhysics(),
-          child: Column(
-            children: [
-              Container(
-                padding: const EdgeInsets.symmetric( horizontal: 35,),
-                height: SizeConfig.heightMultiplier * 30,
-                width: SizeConfig.widthMultiplier * 100,
-                decoration: const BoxDecoration(
-              
-              borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(20),
-          bottomRight: Radius.circular(20)
-              ),              image: DecorationImage(image:AssetImage('assets/auth/login.png'), fit: BoxFit.cover,)
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    appButton(onTap: (){
-                      Get.back();
-                    }, widget: const Icon(Icons.keyboard_arrow_left, color: AppColor.darkgrey,size: 30), radius: 15, height: 45, width: 45, buttonColor: AppColor.white),
-                    appText(text: 'Create Your\nAccount', fontSize: 38)
-                  ],
-                ),
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.symmetric( horizontal: 35,),
+              height: SizeConfig.heightMultiplier * 30,
+              width: SizeConfig.widthMultiplier * 100,
+              decoration: const BoxDecoration(
+            
+            borderRadius: BorderRadius.only(
+        bottomLeft: Radius.circular(20),
+        bottomRight: Radius.circular(20)
+            ),              image: DecorationImage(image:AssetImage('assets/auth/login.png'), fit: BoxFit.cover,)
               ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  appButton(onTap: (){
+                    Get.back();
+                  }, widget: const Icon(Icons.keyboard_arrow_left, color: AppColor.darkgrey,size: 30), radius: 15, height: 45, width: 45, buttonColor: AppColor.white),
+                  appText(text: 'Create Your\nAccount', fontSize: 38)
+                ],
+              ),
+            ),
+             
+            Expanded(
+              child: SizedBox(
                
-              Container(
-               
-                height: SizeConfig.heightMultiplier * 70.8,
+                height: SizeConfig.heightMultiplier * 70,
                 child: ListView(
                    padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 35),
                   children: [ 
@@ -170,7 +169,7 @@ String userType;
                   if(signupVM.formKey.currentState!.validate()){
                     
                     Get.to( PhoneView(
-
+            
                 
                     ));
                     print('success');
@@ -218,9 +217,9 @@ String userType;
                   
                 ),
               ),
-             
-            ],
-          ),
+            ),
+           
+          ],
         ),
       ),
     );;

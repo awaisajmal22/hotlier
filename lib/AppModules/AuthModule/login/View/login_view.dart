@@ -6,6 +6,7 @@ import 'package:hotlier/AppModules/AuthModule/ForgetPassword/View/forget_passwor
 import 'package:hotlier/AppModules/AuthModule/signup/View/signUp_view.dart';
 import 'package:hotlier/AppModules/AuthModule/login/ViewModel/login_view_model.dart';
 import 'package:hotlier/AppModules/SelectUserTypeModule/View/select_user_type_view.dart';
+import 'package:hotlier/AppModules/UserProfileModule/EditProfile/ViewModel/edit_profile_view_model.dart';
 import 'package:hotlier/common/ThirdPartyButtons/third_party_signupTile.dart';
 import 'package:hotlier/common/app_Text.dart';
 import 'package:hotlier/common/app_button.dart';
@@ -21,50 +22,47 @@ import '../../signup/Services/signup_services.dart';
 class LoginView extends StatelessWidget {
    LoginView({super.key});
 final loginController = Get.put(LoginViewModel());
+final profileVM = Get.put(EditProfileViewModel());
 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: SingleChildScrollView(
-        physics: const NeverScrollableScrollPhysics(),
-        child: Form(
-          key: loginController.formKey,
-          child: Column(
-            children: [
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 35,vertical: 18),
-                height: SizeConfig.heightMultiplier * 30,
-                width: SizeConfig.widthMultiplier * 100,
-                decoration: const BoxDecoration(
-              
-              borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(20),
-          bottomRight: Radius.circular(20)
-              ),              image: DecorationImage(image:AssetImage('assets/auth/login.png'), fit: BoxFit.cover,)
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                   
-                    // appButton(onTap: (){
-                    //   Get.back();
-                    // }, widget: const Icon(Icons.keyboard_arrow_left, color: AppColor.darkgrey,size: 30), radius: 15, height: 45, width: 45, buttonColor: AppColor.white),
-                    appText(text: 'Login Your\nAccount', fontSize: 38)
-                  ],
-                ),
+      body: Form(
+        key: loginController.formKey,
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 35,vertical: 18),
+              height: SizeConfig.heightMultiplier * 30,
+              width: SizeConfig.widthMultiplier * 100,
+              decoration: const BoxDecoration(
+            
+            borderRadius: BorderRadius.only(
+        bottomLeft: Radius.circular(20),
+        bottomRight: Radius.circular(20)
+            ),              image: DecorationImage(image:AssetImage('assets/auth/login.png'), fit: BoxFit.cover,)
               ),
-         
-              SizedBox(
-          height: SizeConfig.heightMultiplier * 3.5,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                 
+                  // appButton(onTap: (){
+                  //   Get.back();
+                  // }, widget: const Icon(Icons.keyboard_arrow_left, color: AppColor.darkgrey,size: 30), radius: 15, height: 45, width: 45, buttonColor: AppColor.white),
+                  appText(text: 'Login Your\nAccount', fontSize: 38)
+                ],
               ),
-              Container(
+            ),
+       
+            
+            Expanded(
+              child: Container(
                 height: SizeConfig.heightMultiplier * 70,
                 padding: const EdgeInsets.symmetric(horizontal: 35),
                 child: ListView(
-                  padding: const EdgeInsets.all(0),
                   children: [
                 textFormField(
                   hintText: 'Enter Your Email',
@@ -93,7 +91,7 @@ final loginController = Get.put(LoginViewModel());
                      validation: (value){
                      if(value!.isEmpty){
                       return "please Enter Your Password";
-                    } else if(!loginController.passwordRegex.hasMatch(value)){
+                    } else if(loginController.password.value.text.length < 4){
                       return 'Please Enter Valid Password';
                     }
                     else {
@@ -118,10 +116,10 @@ final loginController = Get.put(LoginViewModel());
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-        GestureDetector(onTap: (){
-          Get.to(ForgetView());
-        }, 
-        child: appText(
+                  GestureDetector(onTap: (){
+                    Get.to(ForgetView());
+                  }, 
+                  child: appText(
                 text: 'Forget Password ?', 
                 textColor: AppColor.darkgrey,
                  fontSize: 12,
@@ -133,16 +131,20 @@ final loginController = Get.put(LoginViewModel());
                   height: 24,
                 ),
                 appButton(onTap: () async {
+                 
                   if(loginController.formKey.currentState!.validate()){
                     showLoadingIndicator(context: context);
                     bool? data = await loginController.onLogin();
                     hideOpenDialog(context: context);
+                    print(data);
                     if(data == true){
-Get.offAll(PresistentBottomBarItems());
-                    }
-
-                   
+                   profileVM.getUserDetail();
+                   Get.offAll(PresistentBottomBarItems());
                     print('success');
+                    }
+            
+                   
+                   
                   }
                   else {
                     print('Error');
@@ -179,9 +181,9 @@ Get.offAll(PresistentBottomBarItems());
                   
                 ),
               ),
-             
-            ],
-          ),
+            ),
+           
+          ],
         ),
       ),
     );

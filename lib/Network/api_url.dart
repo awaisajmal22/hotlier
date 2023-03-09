@@ -4,5 +4,5 @@ class ApiUrl{
   static const signupUrl = '${ApiUrl.url}register';
   static const phoneOtpUrl = '${ApiUrl.url}phone-OTP';
   static const socialLoginUrl = '${ApiUrl.url}social-register';
-  static const editPorfileUrl = '${ApiUrl.url}user-profile';
+  static const getUserProfile = '${ApiUrl.url}profile';
 }

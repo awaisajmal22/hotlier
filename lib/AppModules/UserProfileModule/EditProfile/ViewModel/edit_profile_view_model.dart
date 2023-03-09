@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:hotlier/AppModules/UserProfileModule/EditProfile/Model/ueser_profile_model.dart';
 import 'package:hotlier/AppModules/UserProfileModule/Model/profile_model.dart';
+import 'package:hotlier/Network/api_services.dart';
+import 'package:hotlier/Network/api_url.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path/path.dart' as path;
 
@@ -37,5 +40,21 @@ class EditProfileViewModel extends GetxController{
 
   deleteImage(){
     image.value = '';
+  }
+  
+  Rx<UserProfileModel>? userDetail = UserProfileModel().obs;
+
+  getUserDetail() async {
+    try {
+      var response = await API().getRequestHeader(ApiUrl.getUserProfile);
+      print(response);
+      if(response.statusCode == 200){
+       print(response);
+      }
+    } on Exception catch (e){
+      print(e.toString());
+    } catch (e){
+      return e;
+    }
   }
 }
