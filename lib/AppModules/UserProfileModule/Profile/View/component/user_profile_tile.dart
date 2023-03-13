@@ -38,7 +38,7 @@ Widget userProfileTile({
                 iconColor: selectedIndex == index ? AppColor.white : Color(0xff323142),
                 leading: ImageIcon(AssetImage(icon),),
                 title: appText(text: title, fontSize: 18, fontweight: FontWeight.w400,textColor: selectedIndex == index ? AppColor.white : Color(0xff323142)),
-                trailing: index == 5 ? null : FaIcon(FontAwesomeIcons.chevronRight, color: selectedIndex == index ? AppColor.white : Color(0xff323142), size: 24,),
+                trailing: index == 6 ? null : FaIcon(FontAwesomeIcons.chevronRight, color: selectedIndex == index ? AppColor.white : Color(0xff323142), size: 24,),
               ),
               
             );

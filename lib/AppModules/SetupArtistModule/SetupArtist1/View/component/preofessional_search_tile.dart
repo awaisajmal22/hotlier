@@ -33,7 +33,7 @@ Widget professionalSearchTile(BuildContext context) {
                         
                       
                         prefixIcon: const Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 13,vertical: 13),
+                            padding: EdgeInsets.symmetric(horizontal: 13,vertical: 13),
                             child: ImageIcon(AssetImage('assets/navbar/Search.png'), color: AppColor.lightgrey,),
                           ),
                         border: OutlineInputBorder(

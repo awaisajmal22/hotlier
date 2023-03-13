@@ -3,41 +3,41 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:hotlier/AppModules/BrandsModule/ViewModel/brands_viewmodel.dart';
+import 'package:hotlier/AppModules/ExploreModule/ViewModel/explore_view_model.dart';
+import 'package:hotlier/common/app_button.dart';
+import 'package:hotlier/common/app_color.dart';
+import 'package:hotlier/common/size_config.dart';
 
 import '../../../../common/app_Text.dart';
-import '../../../../common/app_button.dart';
-import '../../../../common/app_color.dart';
-import '../../../../common/size_config.dart';
-import 'component/brands_grid_tile.dart';
-import 'component/brands_search_tile.dart';
+import 'component/grid_view_tile.dart';
+import 'component/search_tile.dart';
 
-class BrandsView extends StatelessWidget {
-   BrandsView({super.key});
-  final brandsVM = Get.put(BrandsViewModel());
-
+class ExploreView extends StatelessWidget {
+  ExploreView({super.key, required  this.backButtonCheck});
+  final exploreVM = Get.put(ExploreViewModel());
+ bool? backButtonCheck;
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
-      backgroundColor: AppColor.white,
       body: SafeArea(
-          child: ListView(
-            physics: NeverScrollableScrollPhysics(),
+          child: Column(
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 35),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                appButton(
+                  backButtonCheck == false ? Container() :  appButton(
                         onTap: (){
+                          print(backButtonCheck);
                          Navigator.of(context).pop();
                         }, widget: const Icon(Icons.keyboard_arrow_left, color: AppColor.darkgrey,size: 30), radius: 15, height: 45, width: 45, 
                         buttonColor: AppColor.white),
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
             Padding(
@@ -47,17 +47,17 @@ class BrandsView extends StatelessWidget {
                   Row(
 
                     children: [
-                      brandsSearchTile(context),
-                      SizedBox(
+                      searchTile(context,suffixIcon: null,controller: null ),
+                      const SizedBox(
                         width: 7,
                       ),
                      Obx(
                        ()=> GestureDetector(
                             onTap: (){
-                              brandsVM.check.value = !brandsVM.check.value;
+                              exploreVM.check.value = !exploreVM.check.value;
                             },
                             child: Container(
-                              padding: EdgeInsets.all(15),
+                              padding: const EdgeInsets.all(15),
                               alignment: Alignment.center,
                               height: 51,
                               width: 51,
@@ -65,7 +65,7 @@ class BrandsView extends StatelessWidget {
                                 color: AppColor.buttonColor,
                                 borderRadius: BorderRadius.circular(12)
                               ),
-                              child: brandsVM.check.value ? Image.asset('assets/explore/card.png') : FaIcon(FontAwesomeIcons.list, color: AppColor.darkgrey,),
+                              child: exploreVM.check.value ? Image.asset('assets/explore/card.png') : const FaIcon(FontAwesomeIcons.list, color: AppColor.darkgrey,),
                             ),
                           ),
                      ),
@@ -73,7 +73,7 @@ class BrandsView extends StatelessWidget {
     
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 17,
                   ),
                 Padding(
@@ -96,7 +96,7 @@ class BrandsView extends StatelessWidget {
                             textColor: AppColor.lightgrey,
                           ),
                     ),
-                 brandsGridTile(context, brandsVM: brandsVM, title: 'Carpet Brand', subtitle: 'Carpet Designer', imageUrl: 'https://cdn.pixabay.com/photo/2023/01/21/02/40/cat-7732877__340.jpg'),
+    gridViewTile(context, exploreVM: exploreVM, backButtonCheck: backButtonCheck!),
                   ],
                  )
                        
@@ -107,4 +107,4 @@ class BrandsView extends StatelessWidget {
         )),
     );
   }
-  }
+}

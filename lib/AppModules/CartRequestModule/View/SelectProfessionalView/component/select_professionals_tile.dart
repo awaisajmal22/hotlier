@@ -29,7 +29,7 @@ Widget selectProfessionalsTile(
   boxShadow:  [
                           BoxShadow(
                             color: tileColor.withOpacity(0.06), blurRadius: 20, spreadRadius: 6,
-                            offset: Offset(0, 4)
+                            offset: const Offset(0, 4)
                           )
                         ],
         color: AppColor.white,

@@ -17,13 +17,13 @@ Widget datePickerTile({
       color: AppColor.buttonColor,
         
       ),
-      padding: EdgeInsets.symmetric(horizontal: 19,vertical: 15),
+      padding: const EdgeInsets.symmetric(horizontal: 19,vertical: 15),
       height: 54,
       child: Row(
         children: [
-         Image(image: AssetImage('assets/cart/date.png'), height: 20,
+         const Image(image: AssetImage('assets/cart/date.png'), height: 20,
          width: 20, color: AppColor.cyan,),
-         SizedBox(
+         const SizedBox(
           width: 39,
          ),
          appText(text: date, textColor: AppColor.cyan, fontSize: 14, fontweight: FontWeight.w500)

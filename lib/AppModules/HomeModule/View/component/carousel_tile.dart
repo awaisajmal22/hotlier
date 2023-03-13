@@ -20,7 +20,7 @@ final homeVM = Get.put(HomeViewModel());
           child: Column(
             children: [
             Container(
-              padding: EdgeInsets.only(left: 36, right: 44.57),
+              padding: const EdgeInsets.only(left: 36, right: 44.57),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -31,7 +31,7 @@ final homeVM = Get.put(HomeViewModel());
                       appButton(onTap: (){
                         Get.to(NotificationView());
                       }, 
-                      widget: ImageIcon(AssetImage('assets/home/bell.png')))
+                      widget: const ImageIcon(AssetImage('assets/home/bell.png')))
                     ],
 
                   ),
@@ -40,7 +40,7 @@ final homeVM = Get.put(HomeViewModel());
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 14,
             ),
             SizedBox(
@@ -53,14 +53,14 @@ final homeVM = Get.put(HomeViewModel());
                 
                 return Container(
                   
-              margin: EdgeInsets.symmetric(horizontal: 30),
+              margin: const EdgeInsets.symmetric(horizontal: 30),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     image: DecorationImage(image: NetworkImage(homeVM.images[index]), fit: BoxFit.cover)
                   ),
                 );
               },),
-            ), SizedBox(
+            ), const SizedBox(
               height: 12,
             ), 
             
@@ -69,7 +69,7 @@ final homeVM = Get.put(HomeViewModel());
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: List.generate(homeVM.images.length, (index) {
                       return Container(
-                      margin: EdgeInsets.symmetric(horizontal: 6),
+                      margin: const EdgeInsets.symmetric(horizontal: 6),
                     height: 8,
                     width: 8,
                     decoration: BoxDecoration(

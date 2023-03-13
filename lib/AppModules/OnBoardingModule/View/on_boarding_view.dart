@@ -36,7 +36,7 @@ class OnBoardingView extends StatelessWidget {
                   width: double.maxFinite,
                   child: Stack(
                     children: [
-                       Positioned(
+                       const Positioned(
                     bottom: -10,
                     left: -10,
                     right: -10,
@@ -52,11 +52,11 @@ class OnBoardingView extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            SizedBox(
+                            const SizedBox(
                               height: 5,
                             ),
                             appText(text: onBoardingController.onboardingImage[index].title, textAlign: TextAlign.justify),
-                            SizedBox(
+                            const SizedBox(
                               height: 20,
                             ),
                             
@@ -84,8 +84,9 @@ class OnBoardingView extends StatelessWidget {
                                 
                                 Obx(
                                   ()=> Row(
-                                    children: List.generate(3, (ind) =>  Container(
-                                                        margin:  EdgeInsets.symmetric( horizontal: 3.56),
+                                    children: List.generate(3, (ind) =>  AnimatedContainer(
+                                    duration: const Duration(milliseconds: 300),
+                                     margin:  const EdgeInsets.symmetric( horizontal: 3.56),
                                       height: 8.74,
                                       width: onBoardingController.selectedPage.value == ind ? 16.85 : 8.99,
                                       decoration: BoxDecoration(

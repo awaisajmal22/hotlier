@@ -28,7 +28,7 @@ Widget favoriteDesignerTile(
                             Container(
                               alignment: Alignment.center,
                               height: 65,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(10),
                                   bottomRight: Radius.circular(10)

@@ -39,7 +39,7 @@ class ResetPasswordView extends StatelessWidget {
                           ),
         
                           appText(text: 'Reset Your Password', textColor: AppColor.textBlack, fontSize: 38, fontweight: FontWeight.w700),
-                          SizedBox(
+                          const SizedBox(
                             height:45.19,
                           ),
                           Obx(
@@ -64,11 +64,11 @@ class ResetPasswordView extends StatelessWidget {
                         onTap: (){
                           resetPasswordVM.check1.value = !resetPasswordVM.check1.value;
                         },
-                        child:resetPasswordVM.check1.value ? Icon(Icons.visibility_off_outlined, color: AppColor.lightgrey,) : Icon(Icons.visibility_outlined, color: AppColor.lightgrey,),
+                        child:resetPasswordVM.check1.value ? const Icon(Icons.visibility_off_outlined, color: AppColor.lightgrey,) : const Icon(Icons.visibility_outlined, color: AppColor.lightgrey,),
                       )
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20.48,
                   ),
                    Obx(
@@ -93,11 +93,11 @@ class ResetPasswordView extends StatelessWidget {
                         onTap: (){
                           resetPasswordVM.check2.value = !resetPasswordVM.check2.value;
                         },
-                        child:resetPasswordVM.check2.value ? Icon(Icons.visibility_off_outlined, color: AppColor.lightgrey,) : Icon(Icons.visibility_outlined, color: AppColor.lightgrey,),
+                        child:resetPasswordVM.check2.value ? const Icon(Icons.visibility_off_outlined, color: AppColor.lightgrey,) : const Icon(Icons.visibility_outlined, color: AppColor.lightgrey,),
                       )
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 32.48,
                   ),
                    appButton(onTap: (){

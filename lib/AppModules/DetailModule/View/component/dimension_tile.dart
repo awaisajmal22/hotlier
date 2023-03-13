@@ -18,7 +18,7 @@ Widget dimentionTile({
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       appText(text: 'Dimension', fontSize: 14, fontweight: FontWeight.w400, textColor: AppColor.textBlack),
-      SizedBox(
+      const SizedBox(
         height: 5,
       ),
       GestureDetector(
@@ -30,8 +30,8 @@ Widget dimentionTile({
                 sigmaX: 1.8,sigmaY: 1.8
               ),
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 23,vertical: 20),
-              decoration: BoxDecoration(
+                padding: const EdgeInsets.symmetric(horizontal: 23,vertical: 20),
+              decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(20),
                   topLeft: Radius.circular(20),
@@ -48,7 +48,7 @@ Widget dimentionTile({
                     height: SizeConfig.heightMultiplier * 11.4,
                     child: GridView.builder(
                       itemCount: detailVM.dimensionList.length,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       mainAxisSpacing: 5,
                       crossAxisSpacing: 5,
                       crossAxisCount: 2,
@@ -62,7 +62,7 @@ Widget dimentionTile({
               },
               child: Obx(
                 ()=> Container(
-                padding: EdgeInsets.symmetric( vertical: 13, horizontal:  10),
+                padding: const EdgeInsets.symmetric( vertical: 13, horizontal:  10),
                     
                 decoration: BoxDecoration(borderRadius: BorderRadius.circular(4),
                 border: Border.all(
@@ -70,13 +70,13 @@ Widget dimentionTile({
                 ),
                 color: AppColor.greyWhite
                 ),
-                child: FittedBox(child: appText(text: detailVM.dimensionList[index], textColor: Color(0xff5D5D5D), fontSize: 14, fontweight: FontWeight.w400)),
+                child: FittedBox(child: appText(text: detailVM.dimensionList[index], textColor: const Color(0xff5D5D5D), fontSize: 14, fontweight: FontWeight.w400)),
                       ),
               ),
                       );
                     })),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 9,
                   ),
                   appButton(
@@ -94,7 +94,7 @@ Widget dimentionTile({
               widgetAlignment: Alignment.center,
               radius: 4
               ),
-              SizedBox(
+              const SizedBox(
                 height: 32,
               ),
               appButton(
@@ -105,7 +105,7 @@ Widget dimentionTile({
                   }, widget: FittedBox(
                     child: appText(
                       text: 'Add Dimension', 
-                      textColor: Color(0xffF3F5F6), fontSize: 16,
+                      textColor: const Color(0xffF3F5F6), fontSize: 16,
                        fontweight: FontWeight.w400)), height: 66, 
                        width: SizeConfig.widthMultiplier * 100,
               widgetAlignment: Alignment.center,
@@ -121,7 +121,7 @@ Widget dimentionTile({
         child: Container(
           height: 46,
           width: SizeConfig.widthMultiplier * 43,
-          padding: EdgeInsets.symmetric( vertical: 13, horizontal:  10),
+          padding: const EdgeInsets.symmetric( vertical: 13, horizontal:  10),
       
           decoration: BoxDecoration(borderRadius: BorderRadius.circular(4),
           color: AppColor.greyWhite
@@ -130,9 +130,12 @@ Widget dimentionTile({
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                appText(text: detailVM.dimension.value, textColor: Color(0xff5D5D5D), fontSize: 14, fontweight: FontWeight.w400),
-                      Icon(Icons.keyboard_arrow_down,  color: AppColor.gery5D)
-          
+                appText(text: detailVM.dimension.value, textColor: const Color(0xff5D5D5D), fontSize: 14, fontweight: FontWeight.w400,),
+                const SizedBox(
+                  width: 10,
+                ),
+                      const Icon(Icons.keyboard_arrow_down,  color: AppColor.gery5D)
+            
               ],
             ),
           )),

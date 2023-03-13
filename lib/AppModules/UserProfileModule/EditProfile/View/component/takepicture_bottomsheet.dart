@@ -16,9 +16,9 @@ takePictureBottomSheet(
 ){
   Get.bottomSheet(
     Container(
-      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
       height: SizeConfig.heightMultiplier * 35,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         borderRadius: BorderRadius.only(
           topRight: Radius.circular(25),
           topLeft: Radius.circular(25),
@@ -28,8 +28,8 @@ takePictureBottomSheet(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          appText(text: 'Select Profile photo', textColor: Color(0xff292929),fontSize: 20, fontweight: FontWeight.w700),
-          SizedBox(
+          appText(text: 'Select Profile photo', textColor: const Color(0xff292929),fontSize: 20, fontweight: FontWeight.w700),
+          const SizedBox(
             height: 32,
           ),
           Column(
@@ -50,9 +50,9 @@ takePictureBottomSheet(
                   },
                   leading: ImageIcon( AssetImage(data[index].leadingIcon), 
                   color: AppColor.black,),
-                  title: appText(text: data[index].title, textColor: Color(0xff292929), fontSize: 16, fontweight: FontWeight.w400),
+                  title: appText(text: data[index].title, textColor: const Color(0xff292929), fontSize: 16, fontweight: FontWeight.w400),
                   ),
-                index == data.length - 1 ? SizedBox() : Container(
+                index == data.length - 1 ? const SizedBox() : Container(
                     height: 1,
                     width: SizeConfig.widthMultiplier * 50,
                     color: Colors.grey[100],

@@ -20,10 +20,10 @@ Widget cartTile({
   }
 ) {
     return itemcCount <= 0 ? Container() : Container(
-                              margin: EdgeInsets.symmetric(
+                              margin: const EdgeInsets.symmetric(
                                 vertical: 7
                               ),
-                              padding: EdgeInsets.symmetric(horizontal: 10, vertical:  10),
+                              padding: const EdgeInsets.symmetric(horizontal: 10, vertical:  10),
                               decoration: BoxDecoration(
                                  borderRadius: BorderRadius.circular(12),
                                  color: AppColor.buttonColor
@@ -44,7 +44,7 @@ Widget cartTile({
                                       borderRadius: BorderRadius.circular(10)
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 15,
                                   ),
                                    Column(
@@ -57,7 +57,7 @@ Widget cartTile({
                                         children: [
                                           
                                       appText(text: title, textColor: AppColor.cyan, fontSize: 20, fontweight: FontWeight.w600),
-                                      appText(text: description, textColor: Color(0xff747474),fontSize: 12, fontweight: FontWeight.w400),
+                                      appText(text: description, textColor: const Color(0xff747474),fontSize: 12, fontweight: FontWeight.w400),
                                         ],
                                       ),
                                        Row(
@@ -68,12 +68,12 @@ Widget cartTile({
                                             onTap: decreament,
                                             child: Container(
                                               alignment: Alignment.center,
-                                              padding: EdgeInsets.symmetric(horizontal: 2,vertical: 2),
+                                              padding: const EdgeInsets.symmetric(horizontal: 2,vertical: 2),
                                               height: 18.33,
                                               width: 18.33,
                                               decoration: BoxDecoration(
                                                 borderRadius: BorderRadius.circular(5),
-                                                image: DecorationImage(image: AssetImage('assets/cart/minus.png'),fit: BoxFit.cover)
+                                                image: const DecorationImage(image: AssetImage('assets/cart/minus.png'),fit: BoxFit.cover)
                                               ),
                                               
                                             ),
@@ -90,12 +90,12 @@ Widget cartTile({
                                             onTap: increament,
                                             child: Container(
                                               alignment: Alignment.center,
-                                              padding: EdgeInsets.symmetric(horizontal: 2,vertical: 2),
+                                              padding: const EdgeInsets.symmetric(horizontal: 2,vertical: 2),
                                               height: 18.33,
                                               width: 18.33,
                                               decoration: BoxDecoration(
                                                 borderRadius: BorderRadius.circular(5),
-                                                image: DecorationImage(image: AssetImage('assets/cart/plus.png'),fit: BoxFit.cover)
+                                                image: const DecorationImage(image: AssetImage('assets/cart/plus.png'),fit: BoxFit.cover)
                                               ),
                                               
                                             ),

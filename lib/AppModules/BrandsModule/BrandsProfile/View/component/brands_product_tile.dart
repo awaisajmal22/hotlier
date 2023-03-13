@@ -21,7 +21,7 @@ Widget brandsProductTile(
                 Container(
                   height: 69.25,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(5),
                       topRight: Radius.circular(5)
                     ),
@@ -29,7 +29,7 @@ Widget brandsProductTile(
                   )
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
                   height: 34.75,
                   alignment: Alignment.center,
                   child: appText(

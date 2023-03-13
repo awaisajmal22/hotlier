@@ -23,7 +23,7 @@ Widget dealerProileTile({
                                               backgroundImage: NetworkImage(imageUrl),
                                               radius: 25,
                                             ),
-                                            SizedBox(
+                                            const SizedBox(
                                               width: 22,
                                             ),
                                             Column(
@@ -32,8 +32,8 @@ Widget dealerProileTile({
                                             appText(text: name, textColor: AppColor.textBlack, fontSize: 18, fontweight: FontWeight.w700),
                                             Row(
                                               children: [
-                                            appText(text: 'to John Wick', textColor: Color(0xffACADB9), fontSize: 10, fontweight: FontWeight.w400),
-                                            Icon(Icons.keyboard_arrow_down, color: Color(0xffACADB9),size: 13,)
+                                            appText(text: 'to John Wick', textColor: const Color(0xffACADB9), fontSize: 10, fontweight: FontWeight.w400),
+                                            const Icon(Icons.keyboard_arrow_down, color: Color(0xffACADB9),size: 13,)
                                                   
                                               ],
                                             )
@@ -41,11 +41,11 @@ Widget dealerProileTile({
                                             ),
                                   ],
                                 ),
-                                            FaIcon(FontAwesomeIcons.ellipsisVertical, color: AppColor.textBlack,)
+                                            const FaIcon(FontAwesomeIcons.ellipsisVertical, color: AppColor.textBlack,)
 
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 32,
                             ),
                             appText(text: message,

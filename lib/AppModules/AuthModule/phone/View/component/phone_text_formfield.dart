@@ -126,17 +126,17 @@ Widget phoneTextFormField(
       autofocus: false,
       obscureText: obsecure,
       cursorColor: AppColor.cyan,
-      style: TextStyle(
+      style: const TextStyle(
         fontSize: 12,
         fontFamily: 'SF Pro Display',
         color:  AppColor.lightgrey
       ),
       decoration: InputDecoration(
         
-        contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 22),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 22),
 
         hintText: hintText,
-        hintStyle: TextStyle(
+        hintStyle: const TextStyle(
           color: AppColor.lightgrey,
         fontSize: 12,
         fontFamily: 'SF Pro Display',
@@ -166,24 +166,24 @@ Widget phoneTextFormField(
         enabled: true,
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(radius),
-        borderSide: BorderSide(
+        borderSide: const BorderSide(
           color: AppColor.cyan
         ) 
         ),
        border: OutlineInputBorder(
-        borderSide: BorderSide(
+        borderSide: const BorderSide(
           color: AppColor.transparent
         ),
         borderRadius: BorderRadius.circular(radius)
        ),
        enabledBorder:   OutlineInputBorder(
-        borderSide: BorderSide(
+        borderSide: const BorderSide(
           color: AppColor.transparent
         ),
         borderRadius: BorderRadius.circular(radius)
        ),
        errorBorder: OutlineInputBorder(
-        borderSide: BorderSide(
+        borderSide: const BorderSide(
           color: AppColor.transparent
         ),
         borderRadius: BorderRadius.circular(radius)

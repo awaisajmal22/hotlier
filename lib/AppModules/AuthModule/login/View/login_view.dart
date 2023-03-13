@@ -131,24 +131,24 @@ final profileVM = Get.put(EditProfileViewModel());
                   height: 24,
                 ),
                 appButton(onTap: () async {
-                 
-                  if(loginController.formKey.currentState!.validate()){
-                    showLoadingIndicator(context: context);
-                    bool? data = await loginController.onLogin();
-                    hideOpenDialog(context: context);
-                    print(data);
-                    if(data == true){
-                   profileVM.getUserDetail();
-                   Get.offAll(PresistentBottomBarItems());
-                    print('success');
-                    }
+                 Get.offAll(PresistentBottomBarItems());
+                  // if(loginController.formKey.currentState!.validate()){
+                  //   showLoadingIndicator(context: context);
+                  //   bool? data = await loginController.onLogin();
+                  //   hideOpenDialog(context: context);
+                  //   print(data);
+                  //   if(data == true){
+                  //  profileVM.getUserDetail();
+                   
+                  //   print('success');
+                  //   }
             
                    
                    
-                  }
-                  else {
-                    print('Error');
-                  }
+                  // }
+                  // else {
+                  //   print('Error');
+                  // }
                 }, 
                 widget: appText(
                   text: 'Login'

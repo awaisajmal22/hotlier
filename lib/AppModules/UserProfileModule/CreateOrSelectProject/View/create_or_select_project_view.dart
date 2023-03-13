@@ -24,7 +24,7 @@ CreateOrSelectProjectView({super.key, required this.check});
   Widget build(BuildContext context) {
     return Scaffold(
       bottomSheet:   MediaQuery.of(context).viewInsets.bottom !=0? null :Container(
-        padding: EdgeInsets.symmetric( horizontal: 22, vertical: 10),
+        padding: const EdgeInsets.symmetric( horizontal: 22, vertical: 10),
         height: SizeConfig.heightMultiplier * 10,
         width: SizeConfig.widthMultiplier * 100,
         child: appButton(onTap: (){
@@ -40,7 +40,7 @@ CreateOrSelectProjectView({super.key, required this.check});
                       
                       Get.back();
                   });
-        }, widget: appText(text: 'Create a Project', fontSize: 16, fontweight: FontWeight.w400, textColor: Color(0xffF3F5F6),), 
+        }, widget: appText(text: 'Create a Project', fontSize: 16, fontweight: FontWeight.w400, textColor: const Color(0xffF3F5F6),), 
         height:  SizeConfig.heightMultiplier * 10,
         width: SizeConfig.widthMultiplier * 100,
          buttonColor: AppColor.cyan
@@ -59,7 +59,7 @@ CreateOrSelectProjectView({super.key, required this.check});
                                            Navigator.of(context).pop();
                                           }, widget: const Icon(Icons.keyboard_arrow_left, color: AppColor.darkgrey,size: 30), radius: 15, height: 45, width: 45, 
                                           buttonColor: AppColor.white),
-                                          SizedBox( width: 22,),
+                                          const SizedBox( width: 22,),
 
                                           Expanded(child: appText(text: 'Create or Select Project', fontSize: 24, fontweight: FontWeight.w700, textColor: AppColor.textBlack)),     
                                 ],
@@ -68,7 +68,7 @@ CreateOrSelectProjectView({super.key, required this.check});
            SizedBox(
               height: SizeConfig.heightMultiplier * 76.86,
               child: ListView.builder(
-              padding: EdgeInsets.only(top: 38),
+              padding: const EdgeInsets.only(top: 38),
               
                 itemCount: selectOrCreateVM.allRequestList.length,
                 itemBuilder: (context, index){
@@ -78,18 +78,18 @@ CreateOrSelectProjectView({super.key, required this.check});
                         children: [
                           Expanded(
                             child: Container(
-                              color: Color(0xffC2C3CB),
+                              color: const Color(0xffC2C3CB),
                               height: 1,
                             ),
                           ),
-                          SizedBox(width: 4.5,),
+                          const SizedBox(width: 4.5,),
                         appText(text: selectOrCreateVM.allRequestList[index].date, fontSize: 20, fontweight: FontWeight.w400,textAlign: TextAlign.start, textColor: AppColor.textBlack.withOpacity(0.6)),
-                        SizedBox(
+                        const SizedBox(
                           width: 4.5,
                         ),
                         Expanded(
                           child: Container(
-                              color: Color(0xffC2C3CB),
+                              color: const Color(0xffC2C3CB),
                               height: 1,
                             ),
                         ),

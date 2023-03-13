@@ -19,7 +19,7 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
 
-    Timer(Duration(seconds: 3), ()=>Get.to(OnBoardingView()));
+    Timer(const Duration(seconds: 3), ()=>Get.to(OnBoardingView()));
     // TODO: implement initState
     super.initState();
   }
@@ -36,6 +36,7 @@ class _SplashViewState extends State<SplashView> {
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
+          // ignore: prefer_const_literals_to_create_immutables
           children: [
         const Image(image: AssetImage('assets/splash/logo.png'),fit: BoxFit.cover,width: 143.9,
         ),

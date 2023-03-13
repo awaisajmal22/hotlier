@@ -23,14 +23,14 @@ Widget favoriteProductTile(
                         child: Column(
                           children: [
                             Container(
-                              padding: EdgeInsets.symmetric(
+                              padding: const EdgeInsets.symmetric(
                                 horizontal: 15, vertical: 12
                               ),
                               alignment: Alignment.topRight,
                               height: 145,
                               width: 175,
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.only(
+                                borderRadius: const BorderRadius.only(
                                   topRight: Radius.circular(10),
                                   topLeft: Radius.circular(10),
                                   
@@ -42,7 +42,7 @@ Widget favoriteProductTile(
                             Container(
                               alignment: Alignment.center,
                               height: 65,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(10),
                                   bottomRight: Radius.circular(10)

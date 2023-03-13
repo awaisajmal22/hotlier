@@ -1,7 +1,7 @@
  import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hotlier/AppModules/SetupArtistModule/VIewModel/setupArtist2_view_model.dart';
+import 'package:hotlier/AppModules/SetupArtistModule/SetupArtist2/ViewModel/setupArtist2_view_model.dart';
 
 import '../../../../../common/app_color.dart';
 

@@ -35,10 +35,10 @@ import '../../../../common/app_button.dart';
                       onTap: (){
                         Get.back();
                       },
-                      child: ImageIcon(AssetImage('assets/profile/close.png')),
+                      child: const ImageIcon(AssetImage('assets/profile/close.png')),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 14.25,
                   ),
                   Row(
@@ -46,7 +46,7 @@ import '../../../../common/app_button.dart';
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       dimensionFormField(
-                         prefixIcon: FaIcon(FontAwesomeIcons.arrowsLeftRight, size: 16,),
+                         prefixIcon: const FaIcon(FontAwesomeIcons.arrowsLeftRight, size: 16,),
 
                         label: 'Width',
                         onSubmit: (value){
@@ -55,7 +55,7 @@ import '../../../../common/app_button.dart';
                       
                       
                        dimensionFormField(
-                        prefixIcon: FaIcon(FontAwesomeIcons.arrowsUpDown,size: 16,),
+                        prefixIcon: const FaIcon(FontAwesomeIcons.arrowsUpDown,size: 16,),
 
 
                         onSubmit: (value){
@@ -63,7 +63,7 @@ import '../../../../common/app_button.dart';
                        }, controller: detailVM.dimension2Controller, label: 'Height', ),
                       
                        dimensionFormField(
-                       prefixIcon: FaIcon(FontAwesomeIcons.upRightAndDownLeftFromCenter, size: 16,),
+                       prefixIcon: const FaIcon(FontAwesomeIcons.upRightAndDownLeftFromCenter, size: 16,),
 
                          label: 'Depth',
                          onSubmit: (value){
@@ -74,7 +74,7 @@ import '../../../../common/app_button.dart';
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
              appButton(
@@ -85,7 +85,7 @@ import '../../../../common/app_button.dart';
                   }, widget: FittedBox(
                     child: appText(
                       text: 'Add Dimension', 
-                      textColor: Color(0xffF3F5F6), fontSize: 16,
+                      textColor: const Color(0xffF3F5F6), fontSize: 16,
                        fontweight: FontWeight.w400)), height: 46, 
                        width: SizeConfig.widthMultiplier * 100,
               widgetAlignment: Alignment.center,
@@ -118,7 +118,7 @@ Widget dimensionFormField(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         appText(text: label, fontSize: 14, fontweight: FontWeight.w400, textColor: AppColor.gery5D),
-                      SizedBox(
+                      const SizedBox(
                         height: 3,
                       ),
         TextFormField(
@@ -133,7 +133,7 @@ Widget dimensionFormField(
           cursorColor: AppColor.gery5D,
           cursorHeight: 20,
         textAlignVertical: TextAlignVertical.center,
-          style: TextStyle(
+          style: const TextStyle(
               fontWeight: FontWeight.w300,
               fontSize: 20,
               color: AppColor.gery5D,),
@@ -146,20 +146,20 @@ Widget dimensionFormField(
             filled: true,
             fillColor:AppColor.greyWhite,
             hintTextDirection: TextDirection.ltr,
-            hintStyle: TextStyle(
+            hintStyle: const TextStyle(
                 fontWeight: FontWeight.w400,
                 fontSize: 14,
                 color: AppColor.gery5D),
-                contentPadding: EdgeInsets.symmetric(vertical: 13, horizontal: 3),
+                contentPadding: const EdgeInsets.symmetric(vertical: 13, horizontal: 3),
             focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(radius),
-                borderSide: BorderSide(width: 1, color: AppColor.transparent)),
+                borderSide: const BorderSide(width: 1, color: AppColor.transparent)),
             enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(radius),
-                borderSide: BorderSide(width: 1, color: AppColor.transparent )),
+                borderSide: const BorderSide(width: 1, color: AppColor.transparent )),
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(radius),
-                borderSide: BorderSide(width: 1, color: AppColor.transparent)),
+                borderSide: const BorderSide(width: 1, color: AppColor.transparent)),
           ),
         ),
       ],

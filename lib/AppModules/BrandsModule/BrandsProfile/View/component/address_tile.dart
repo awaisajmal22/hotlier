@@ -7,7 +7,8 @@ import '../../../../../common/size_config.dart';
 Widget addressTile(
   {
     required String businesstitle,
-    required String location
+    required String location,
+    required String name
   }
 ) {
     return Container(
@@ -20,7 +21,7 @@ Widget addressTile(
                     BoxShadow(
                       spreadRadius: -1,
                       blurRadius: 22,
-                      offset: Offset(0, 10),
+                      offset: const Offset(0, 10),
                       color: AppColor.shadowColor.withOpacity(0.15)
                     ),
                     
@@ -37,26 +38,26 @@ Widget addressTile(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      appText(text: 'John', textColor: AppColor.white, fontSize: 20, fontweight: FontWeight.w700),
+                      appText(text: name, textColor: AppColor.white, fontSize: 20, fontweight: FontWeight.w700),
                      
                       Column(
                       children: [
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            Image(image: AssetImage('assets/profile/business.png'), width: 21, height: 21,color: AppColor.white,),
-                            SizedBox(width: 14,),
+                            const Image(image: AssetImage('assets/profile/business.png'), width: 21, height: 21,color: AppColor.white,),
+                            const SizedBox(width: 14,),
                              Expanded(child: appText(text: 'Business: $businesstitle',textAlign: TextAlign.start, fontSize: 15, textColor: AppColor.white, fontweight: FontWeight.w400))
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 12,
                         ),
                          Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Image(image: AssetImage('assets/profile/Location.png'), width: 15.36, height: 18.27,color: AppColor.white,),
-                            SizedBox(width: 18,),
+                            const Image(image: AssetImage('assets/profile/Location.png'), width: 15.36, height: 18.27,color: AppColor.white,),
+                            const SizedBox(width: 18,),
                              Expanded(child: appText(text: 'Address: $location',textAlign: TextAlign.start, fontSize: 15, textColor: AppColor.white, fontweight: FontWeight.w400))
                           ],
                         )

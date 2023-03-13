@@ -36,7 +36,7 @@ Widget detailStackImageTile({required DetailViewModel detailVM}){
                    },
                    child: Obx(
                      ()=> Container(
-                       margin: EdgeInsets.symmetric(
+                       margin: const EdgeInsets.symmetric(
                          vertical: 8
                        ),
                        height: 61,
@@ -72,13 +72,13 @@ Widget detailStackImageTile({required DetailViewModel detailVM}){
                ()=> Container(
                          
                  alignment: Alignment.center,
-                 margin: EdgeInsets.symmetric(horizontal: 5),
+                 margin: const EdgeInsets.symmetric(horizontal: 5),
                  decoration: BoxDecoration(
                    boxShadow: [
                      BoxShadow(
                        blurRadius: 20,
                        spreadRadius: 6,
-                       offset: Offset(0, 4),
+                       offset: const Offset(0, 4),
                        color: AppColor.black.withOpacity(0.06)
                      )
                    ],
@@ -96,13 +96,13 @@ Widget detailStackImageTile({required DetailViewModel detailVM}){
              }, child: Obx(
                ()=> Container(
                  alignment: Alignment.center,
-                 margin: EdgeInsets.symmetric(horizontal: 5),
+                 margin: const EdgeInsets.symmetric(horizontal: 5),
                  decoration: BoxDecoration(
                    boxShadow: [
                      BoxShadow(
                        blurRadius: 20,
                        spreadRadius: 6,
-                       offset: Offset(0, 4),
+                       offset: const Offset(0, 4),
                        color: AppColor.black.withOpacity(0.06)
                      )
                    ],

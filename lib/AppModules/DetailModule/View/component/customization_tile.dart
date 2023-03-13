@@ -13,16 +13,16 @@ Widget customizationTile(
    keyboardType: TextInputType.text,
       autofocus: false,
       cursorColor: AppColor.cyan,
-      style: TextStyle(
+      style: const TextStyle(
    
-   color:  AppColor.lightgrey
+   color:  AppColor.lightgrey, fontFamily: 'DS Pro Display'
       ),
       decoration: InputDecoration(
    
-   contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 22.9),
+   contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 22.9),
 
    hintText: 'Customization Instruction',
-   hintStyle: TextStyle(
+   hintStyle: const TextStyle(
      color: AppColor.lightgrey,
    
    ),
@@ -32,24 +32,24 @@ Widget customizationTile(
    enabled: true,
    focusedBorder: OutlineInputBorder(
      borderRadius: BorderRadius.circular(radius),
-   borderSide: BorderSide(
+   borderSide: const BorderSide(
      color: AppColor.transparent
    ) 
    ),
   border: OutlineInputBorder(
-   borderSide: BorderSide(
+   borderSide: const BorderSide(
      color: AppColor.transparent
    ),
    borderRadius: BorderRadius.circular(radius)
   ),
   enabledBorder:   OutlineInputBorder(
-   borderSide: BorderSide(
+   borderSide: const BorderSide(
      color: AppColor.transparent
    ),
    borderRadius: BorderRadius.circular(radius)
   ),
   errorBorder: OutlineInputBorder(
-   borderSide: BorderSide(
+   borderSide: const BorderSide(
      color: AppColor.transparent
    ),
    borderRadius: BorderRadius.circular(radius)

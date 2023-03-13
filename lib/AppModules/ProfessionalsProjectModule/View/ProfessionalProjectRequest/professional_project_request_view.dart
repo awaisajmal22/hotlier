@@ -35,11 +35,11 @@ class ProfessionalRequestView extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       bottomSheet: MediaQuery.of(context).viewInsets.bottom != 0 ? null : Container(
         
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         width: SizeConfig.widthMultiplier * 100,
         height: SizeConfig.heightMultiplier * 12,
         child: appButton(onTap: (){
-        }, widget: appText(text: 'Request Proposal', fontSize: 16, fontweight: FontWeight.w400, textColor: Color(0xffF3F5F6),), 
+        }, widget: appText(text: 'Request Proposal', fontSize: 16, fontweight: FontWeight.w400, textColor: const Color(0xffF3F5F6),), 
         height:  SizeConfig.heightMultiplier * 8.2,
         width: SizeConfig.widthMultiplier * 100,
          buttonColor: AppColor.cyan
@@ -48,7 +48,7 @@ class ProfessionalRequestView extends StatelessWidget {
       ) ,
       body: SafeArea(
         child: ListView(
-          physics: NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           children: [
              Padding(
               padding: const EdgeInsets.symmetric(horizontal: 35),
@@ -60,7 +60,7 @@ class ProfessionalRequestView extends StatelessWidget {
                                Navigator.of(context).pop();
                               }, widget: const Icon(Icons.keyboard_arrow_left, color: AppColor.darkgrey,size: 30), radius: 15, height: 45, width: 45, 
                               buttonColor: AppColor.white),
-                              SizedBox( width: 22,),
+                              const SizedBox( width: 22,),
                               appText(text: 'Your Request', fontSize: 24, fontweight: FontWeight.w700, textColor: AppColor.textBlack),
                               
                              
@@ -79,7 +79,7 @@ class ProfessionalRequestView extends StatelessWidget {
                   Row(
                     children: [
                   appText(text: 'Add', textColor: AppColor.textBlack.withOpacity(0.6),fontSize: 14, fontweight: FontWeight.w400),
-                  SizedBox(
+                  const SizedBox(
                     width: 6,
                   ),
                   GestureDetector(
@@ -88,7 +88,7 @@ class ProfessionalRequestView extends StatelessWidget {
                       Get.to(SelectProfessionalView(
                       ));
                     },
-                    child: ImageIcon(AssetImage('assets/cart/plus.png'), size: 20, color: AppColor.cyan,),
+                    child: const ImageIcon(AssetImage('assets/cart/plus.png'), size: 20, color: AppColor.cyan,),
                   )
                   
 
@@ -106,7 +106,7 @@ class ProfessionalRequestView extends StatelessWidget {
                   height: professionalProjectRequestVM.professionals.isEmpty ? 0 : SizeConfig.heightMultiplier * 12,
                    child: ListView.builder(
                       itemCount: professionalProjectRequestVM.professionals.length,
-                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index){
                       return  professionalsTile(
@@ -131,7 +131,7 @@ class ProfessionalRequestView extends StatelessWidget {
                 
                 child: ListView(
                   shrinkWrap: true,
-                  padding: EdgeInsets.only(bottom: 20, top: 0),
+                  padding: const EdgeInsets.only(bottom: 20, top: 0),
                   children: [
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -159,18 +159,18 @@ class ProfessionalRequestView extends StatelessWidget {
                         // selectScopeTile(professionalProjectRequestVM: professionalProjectRequestVM),
                        
                         appText(text: 'Message', textColor: AppColor.textBlack.withOpacity(0.6), fontSize: 14, fontweight: FontWeight.w400),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
                         formField(
                           title: '',
                           controller: professionalProjectRequestVM.messageController
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 21,
                         ),
                         appText(text: 'Select Your Desire Time', textColor: AppColor.textBlack.withOpacity(0.6), fontSize: 14, fontweight: FontWeight.w400),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
                         Obx(
@@ -181,7 +181,7 @@ class ProfessionalRequestView extends StatelessWidget {
                             date: DateFormat.yMMMMd().format(professionalProjectRequestVM.choosedDate.value).toString()
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 21,
                         ),
                         Row(
@@ -193,7 +193,7 @@ class ProfessionalRequestView extends StatelessWidget {
                               },
                               width: SizeConfig.widthMultiplier * 40,
                               icon: 'assets/cart/attach.png', text: 'Attach layout'),
-                            SizedBox(width: 6,),
+                            const SizedBox(width: 6,),
                             attechmentButton(
                               onTap: (){
                                 professionalProjectRequestVM.getCameraImage();
@@ -203,7 +203,7 @@ class ProfessionalRequestView extends StatelessWidget {
                               icon: 'assets/cart/Camera.png', text: 'Take Picture'),
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 12,
                         ),
                         

@@ -8,6 +8,7 @@ RxInt selectedIndex = (-1).obs;
     ProfileModel(title: 'Your Requests', leadingIcon: 'assets/profile/Message.png'),
     ProfileModel(title: 'Favorites', leadingIcon: 'assets/profile/Heart.png'),
     ProfileModel(title: 'Notifications', leadingIcon: 'assets/profile/bell.png'),
+    ProfileModel(title: 'Settings', leadingIcon: 'assets/profile/setting.png'),
     ProfileModel(title: 'About Us', leadingIcon: 'assets/profile/about.png'),
     ProfileModel(title: 'Logout', leadingIcon: 'assets/profile/Logout.png'),
   ];

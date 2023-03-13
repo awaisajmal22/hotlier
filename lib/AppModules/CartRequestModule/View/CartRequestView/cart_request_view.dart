@@ -36,11 +36,11 @@ class CartRequestView extends StatelessWidget {
       backgroundColor: AppColor.white,
       bottomSheet: MediaQuery.of(context).viewInsets.bottom != 0 ? null : Container(
         
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         width: SizeConfig.widthMultiplier * 100,
         height: SizeConfig.heightMultiplier * 12,
         child: appButton(onTap: (){
-        }, widget: appText(text: 'Request Proposal', fontSize: 16, fontweight: FontWeight.w400, textColor: Color(0xffF3F5F6),), 
+        }, widget: appText(text: 'Request Proposal', fontSize: 16, fontweight: FontWeight.w400, textColor: const Color(0xffF3F5F6),), 
         height:  SizeConfig.heightMultiplier * 8.2,
         width: SizeConfig.widthMultiplier * 100,
          buttonColor: AppColor.cyan
@@ -49,7 +49,7 @@ class CartRequestView extends StatelessWidget {
       ) ,
       body: SafeArea(
         child: ListView(
-          physics: NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           children: [
              Padding(
               padding: const EdgeInsets.symmetric(horizontal: 35),
@@ -61,7 +61,7 @@ class CartRequestView extends StatelessWidget {
                                Navigator.of(context).pop();
                               }, widget: const Icon(Icons.keyboard_arrow_left, color: AppColor.darkgrey,size: 30), radius: 15, height: 45, width: 45, 
                               buttonColor: AppColor.white),
-                              SizedBox( width: 22,),
+                              const SizedBox( width: 22,),
                               appText(text: 'Your Request', fontSize: 24, fontweight: FontWeight.w700, textColor: AppColor.textBlack),
                               
                              
@@ -136,7 +136,7 @@ class CartRequestView extends StatelessWidget {
 
                   ],
                 ),
-                leading: CircleAvatar(
+                leading: const CircleAvatar(
                   radius: 25,
                   backgroundImage: NetworkImage('https://img.freepik.com/free-photo/close-up-young-successful-man-smiling-camera-standing-casual-outfit-against-blue-background_1258-66609.jpg?size=626&ext=jpg&ga=GA1.2.1895302013.1677047464'),
                 ),
@@ -154,7 +154,7 @@ class CartRequestView extends StatelessWidget {
                 
                 child: ListView(
                   shrinkWrap: true,
-                  padding: EdgeInsets.only(bottom: 20),
+                  padding: const EdgeInsets.only(bottom: 20),
                   children: [
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -176,26 +176,26 @@ class CartRequestView extends StatelessWidget {
             //               height: 21,
             //             ),
                         appText(text: 'Scope', textColor: AppColor.textBlack.withOpacity(0.6), fontSize: 14, fontweight: FontWeight.w400),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
                         selectScopeTile(cartrequestVM: cartrequestVM),
-                        SizedBox(
+                        const SizedBox(
                           height: 21,
                         ),
                         appText(text: 'Message', textColor: AppColor.textBlack.withOpacity(0.6), fontSize: 14, fontweight: FontWeight.w400),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
                         formField(
                           title: '',
                           controller: cartrequestVM.messageController
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 21,
                         ),
                         appText(text: 'Select Your Desire Time', textColor: AppColor.textBlack.withOpacity(0.6), fontSize: 14, fontweight: FontWeight.w400),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
                         Obx(
@@ -206,7 +206,7 @@ class CartRequestView extends StatelessWidget {
                             date: DateFormat.yMMMMd().format(cartrequestVM.choosedDate.value).toString()
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 21,
                         ),
                         Row(
@@ -219,7 +219,7 @@ class CartRequestView extends StatelessWidget {
                               },
                               width: SizeConfig.widthMultiplier * 40,
                               icon: 'assets/cart/attach.png', text: 'Attach layout'),
-                            SizedBox(width: 6,),
+                            const SizedBox(width: 6,),
                             attechmentButton(
                               onTap: (){
                                 print(cartrequestVM.newimagesList!.length);
@@ -231,7 +231,7 @@ class CartRequestView extends StatelessWidget {
                               icon: 'assets/cart/Camera.png', text: 'Take Picture'),
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 12,
                         ),
                         
@@ -242,7 +242,7 @@ class CartRequestView extends StatelessWidget {
                         height: 97,
                         child: Obx(
                           ()=> ListView.builder(
-                            padding: EdgeInsets.only(left: 20,),
+                            padding: const EdgeInsets.only(left: 20,),
                             itemCount: cartrequestVM.newimagesList!.length,
                             scrollDirection: Axis.horizontal,
                             itemBuilder: (context, index){

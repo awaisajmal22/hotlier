@@ -19,7 +19,7 @@ Widget editProfileFormField(
           color: AppColor.shadowColor.withOpacity(0.15),
           spreadRadius: -1,
           blurRadius: 22,
-          offset: Offset(0, 10)
+          offset: const Offset(0, 10)
         ),
       ],
        borderRadius: BorderRadius.circular(10)
@@ -57,7 +57,7 @@ Widget editProfileFormField(
      ) 
      ),
      suffixIcon:Padding(
-       padding:   EdgeInsets.only(right: 30, top: 19, bottom:  19),
+       padding:   const EdgeInsets.only(right: 30, top: 19, bottom:  19),
        child: GestureDetector(
         onTap: onTap,
         child: const ImageIcon( AssetImage('assets/profile/Edit.png'),)),

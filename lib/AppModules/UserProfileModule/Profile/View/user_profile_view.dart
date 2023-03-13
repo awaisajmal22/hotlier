@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:hotlier/AppModules/FavoriteModule/View/favorite_view.dart';
+import 'package:hotlier/AppModules/SettingModule/Setting/View/settings_view.dart';
 import 'package:hotlier/AppModules/UserProfileModule/About/View/about_view.dart';
 import 'package:hotlier/AppModules/UserProfileModule/EditProfile/View/edit_profile_view.dart';
 import 'package:hotlier/AppModules/UserProfileModule/Notification/View/notification_view.dart';
@@ -27,7 +28,8 @@ class UserProfileView extends StatelessWidget {
       backgroundColor: AppColor.whiteF5,
       body: Column(
         children: [
-          SizedBox(
+          Container(
+            color: AppColor.transparent,
             height: SizeConfig.heightMultiplier * 34,
             width: SizeConfig.widthMultiplier * 100,
             child: Stack(
@@ -58,7 +60,7 @@ class UserProfileView extends StatelessWidget {
                                          Navigator.of(context).pop();
                                         }, widget: const Icon(Icons.keyboard_arrow_left, color: AppColor.darkgrey,size: 30), radius: 15, height: 45, width: 45, 
                                         buttonColor: AppColor.white),
-                                        SizedBox( width: 22,),
+                                        const SizedBox( width: 22,),
 
                                         appText(text: 'Profile', fontSize: 24, fontweight: FontWeight.w700, textColor: AppColor.white),     
                               ],
@@ -77,7 +79,7 @@ class UserProfileView extends StatelessWidget {
                       BoxShadow(
                         spreadRadius: -1,
                         blurRadius: 22,
-                        offset: Offset(0, 10),
+                        offset: const Offset(0, 10),
                         color: AppColor.shadowColor.withOpacity(0.15)
                       )
                     ]
@@ -98,8 +100,8 @@ class UserProfileView extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Image(image: AssetImage('assets/home/Location.png'), width: 15.36, height: 18.27,color: AppColor.textBlack,),
-                            SizedBox(
+                            const Image(image: AssetImage('assets/home/Location.png'), width: 15.36, height: 18.27,color: AppColor.textBlack,),
+                            const SizedBox(
                               width: 18,
                             ),
                             Expanded(child: appText(text: 'Address: 43 Oxford Road, M13 4GR Manchester, UK',textAlign: TextAlign.start, fontSize: 15, textColor: AppColor.textBlack))
@@ -110,7 +112,7 @@ class UserProfileView extends StatelessWidget {
                   )
                 ),
                  Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(image: NetworkImage('https://images.pexels.com/photos/7505201/pexels-photo-7505201.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load'), fit: BoxFit.cover)
                   ),
@@ -125,7 +127,7 @@ class UserProfileView extends StatelessWidget {
           SizedBox(
             height: SizeConfig.heightMultiplier * 59,
             child: ListView.builder(
-              padding: EdgeInsets.symmetric(horizontal: 35, vertical: 18),
+              padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 18),
               itemCount: userProfileVM.profileTileList.length,
               itemBuilder: (context, index){
               return Obx(
@@ -149,9 +151,12 @@ class UserProfileView extends StatelessWidget {
                       Get.to( NotificationView());
                     }
                     else if(userProfileVM.selectedIndex.value == 4){
-                      Get.to(const AboutView());
+                      Get.to(SettingsView());
                     }
                     else if(userProfileVM.selectedIndex.value == 5){
+                      Get.to(const AboutView());
+                    }
+                    else if(userProfileVM.selectedIndex.value == 6){
                       logoutDailog(context);
                     }
                   },

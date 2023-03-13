@@ -14,7 +14,7 @@ Widget materialTile({
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       appText(text: 'Material', fontSize: 14, fontweight: FontWeight.w400, textColor: AppColor.textBlack),
-      SizedBox(
+      const SizedBox(
         height: 5,
       ),
 //       
@@ -28,11 +28,11 @@ Widget materialTile({
           child: DropdownButtonFormField(
           
             isExpanded: true,
-            icon: Icon(Icons.keyboard_arrow_down, color: AppColor.gery5D,size: 14,),
+            icon: const Icon(Icons.keyboard_arrow_down, color: AppColor.gery5D,size: 14,),
             hint: FittedBox(child: appText(text: detailVM.material.value, textColor: AppColor.gery5D,fontSize: 14, fontweight: FontWeight.w400)),
             decoration: InputDecoration(
             
-              contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 12),
+              contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(4),
                 borderSide: BorderSide.none

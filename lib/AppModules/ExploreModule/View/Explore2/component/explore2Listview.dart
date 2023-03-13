@@ -19,7 +19,7 @@ Widget explore2ListViewTile(
                                       height: 88,
                                       width: SizeConfig.widthMultiplier * 25,
                                       decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.only(
+                                        borderRadius: const BorderRadius.only(
                                           topLeft: Radius.circular(10),
                                           bottomLeft: Radius.circular(10)
                                         ),
@@ -27,11 +27,11 @@ Widget explore2ListViewTile(
                                       ),
                                     ),
                                     Container(
-                                      padding: EdgeInsets.only(left: 53.45),
+                                      padding: const EdgeInsets.only(left: 53.45),
                                       alignment: Alignment.centerLeft,
                                       height: 88,
                                       width: SizeConfig.widthMultiplier * 62,
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         color: AppColor.buttonColor,
                                         borderRadius: BorderRadius.only(
                                           topRight: Radius.circular(10),
@@ -50,7 +50,7 @@ Widget explore2ListViewTile(
                                     )
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 )
                               ],

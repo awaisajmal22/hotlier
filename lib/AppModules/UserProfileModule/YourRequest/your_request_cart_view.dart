@@ -36,7 +36,7 @@ class YourRequestCartView extends StatelessWidget {
                                            Navigator.of(context).pop();
                                           }, widget: const Icon(Icons.keyboard_arrow_left, color: AppColor.darkgrey,size: 30), radius: 15, height: 45, width: 45, 
                                           buttonColor: AppColor.white),
-                                          SizedBox( width: 22,),
+                                          const SizedBox( width: 22,),
 
                                           appText(text: 'Your Request', fontSize: 24, fontweight: FontWeight.w700, textColor: AppColor.textBlack),     
                                 ],
@@ -45,25 +45,25 @@ class YourRequestCartView extends StatelessWidget {
             SizedBox(
               height: SizeConfig.heightMultiplier * 88.23,
               child: ListView(
-              padding: EdgeInsets.only(top: 38),
+              padding: const EdgeInsets.only(top: 38),
 
                 children: [
                   Row(
                         children: [
                           Expanded(
                             child: Container(
-                              color: Color(0xffC2C3CB),
+                              color: const Color(0xffC2C3CB),
                               height: 1,
                             ),
                           ),
-                          SizedBox(width: 4.5,),
+                          const SizedBox(width: 4.5,),
                         appText(text: date!, fontSize: 20, fontweight: FontWeight.w400,textAlign: TextAlign.start, textColor: AppColor.textBlack.withOpacity(0.6)),
-                        SizedBox(
+                        const SizedBox(
                           width: 4.5,
                         ),
                         Expanded(
                           child: Container(
-                              color: Color(0xffC2C3CB),
+                              color: const Color(0xffC2C3CB),
                               height: 1,
                             ),
                         ),
@@ -76,7 +76,7 @@ class YourRequestCartView extends StatelessWidget {
                        ),
                        Container(
                         width: SizeConfig.widthMultiplier * 100,
-                           color: Color(0xffC2C3CB),
+                           color: const Color(0xffC2C3CB),
                            height: 1,
                          ),
                         
@@ -86,13 +86,13 @@ class YourRequestCartView extends StatelessWidget {
                           message: 'Hi Jhon,\nLorem ipsum dolor sit amet consectetur. Odio nulla nisi arcu sed ac sit fermentum molestie aliquam. Sed non cursus aliquam laoreet nunc facilisi viverra etiam. Volutpat commodo suspendisse tellus sed faucibus rhoncus egestas tempus...',
 
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 12,
                         ),
                         SizedBox(
                         height: 97,
                         child: ListView.builder(
-                          padding: EdgeInsets.only(left: 14.5),
+                          padding: const EdgeInsets.only(left: 14.5),
                           itemCount: 8,
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (context, index){
@@ -111,12 +111,12 @@ class YourRequestCartView extends StatelessWidget {
                         }),
                       ),
                        
-                        SizedBox(
+                        const SizedBox(
                           height: 24,
                         ),
                         Container(
-                          margin: EdgeInsets.symmetric(horizontal: 23),
-                          padding: EdgeInsets.symmetric(horizontal: 18, vertical: 18),
+                          margin: const EdgeInsets.symmetric(horizontal: 23),
+                          padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 18),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             color: AppColor.buttonColor,
@@ -127,15 +127,15 @@ class YourRequestCartView extends StatelessWidget {
                             children: [
                               Row(
                                 children: [
-                                  Image(image: AssetImage('assets/profile/pdf.png'),
+                                  const Image(image: AssetImage('assets/profile/pdf.png'),
                                   height: 21.75, width: 21.75,),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 19,
                                   ),
                                   appText(text: 'Tender documentation ........final.pdf', fontSize: 12, fontweight: FontWeight.w400, textColor: AppColor.textBlack)
                                 ],
                               ),
-                              Image(image: AssetImage('assets/profile/download.png'),
+                              const Image(image: AssetImage('assets/profile/download.png'),
                                   height: 18.36, width: 15.55,),
                             ],
                           ),

@@ -3,7 +3,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 
 import '../../../../../common/app_Text.dart';
 import '../../../../../common/app_color.dart';
-import '../../../Model/notification_model.dart';
+import '../../Model/notification_model.dart';
 
 Widget slidableTile(
   {
@@ -17,18 +17,18 @@ Widget slidableTile(
                         children: [
                           Expanded(
                             child: Container(
-                              color: Color(0xffC2C3CB),
+                              color: const Color(0xffC2C3CB),
                               height: 1,
                             ),
                           ),
-                          SizedBox(width: 4.5,),
+                          const SizedBox(width: 4.5,),
                         appText(text: notification[index].date, fontSize: 20, fontweight: FontWeight.w400,textAlign: TextAlign.start, textColor: AppColor.textBlack.withOpacity(0.6)),
-                        SizedBox(
+                        const SizedBox(
                           width: 4.5,
                         ),
                         Expanded(
                           child: Container(
-                              color: Color(0xffC2C3CB),
+                              color: const Color(0xffC2C3CB),
                               height: 1,
                             ),
                         ),
@@ -43,7 +43,7 @@ Widget slidableTile(
                     key: const ValueKey(0),
                     closeOnScroll: true,
                     endActionPane: ActionPane(
-                      motion: ScrollMotion(), 
+                      motion: const ScrollMotion(), 
                       extentRatio: 0.22,
                       dismissible: DismissiblePane(onDismissed: (){}),
                     children:const [
@@ -65,18 +65,18 @@ Widget slidableTile(
                           borderRadius: BorderRadius.circular(10)
                         ),
                         tileColor: AppColor.buttonColor,
-                        contentPadding: EdgeInsets.only(left: 10, top: 5.5, right: 5),
+                        contentPadding: const EdgeInsets.only(left: 10, top: 5.5, right: 5),
                         leading: CircleAvatar(
                           radius: 25,
                           backgroundImage: NetworkImage(notification[index].notificationData[i].imageUrl),
                           
                         ),
-                        title: FittedBox(child: appText(text: 'You have Recieved a Proposal...', textColor: Color(0xff323142), fontSize: 20, fontweight: FontWeight.w700)),
+                        title: FittedBox(child: appText(text: 'You have Recieved a Proposal...', textColor: const Color(0xff323142), fontSize: 20, fontweight: FontWeight.w700)),
                         subtitle: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             appText(text: 'Lorem ipsum dolor sit amet consectetur. Iaculis in quam scelerisque fames convallis ...', fontSize: 14,textAlign: TextAlign.left, fontweight: FontWeight.w400, textColor: AppColor.shadowColor),
-                            SizedBox(
+                            const SizedBox(
                               height: 12,
                             ),
                             Row(
@@ -94,7 +94,7 @@ Widget slidableTile(
                   ),
                   
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 31,
                 )
               ],

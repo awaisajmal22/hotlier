@@ -13,7 +13,7 @@ Widget requestTile({required int index, required List data,VoidCallback? onTap})
                                 children: [
                                   Container(
                                   alignment: Alignment.centerLeft,
-                                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 11),
+                                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 11),
                                     height: 90,
                                     width: SizeConfig.widthMultiplier * 69.8,
                                     decoration: BoxDecoration(
@@ -22,11 +22,11 @@ Widget requestTile({required int index, required List data,VoidCallback? onTap})
                                           color: AppColor.shadowColor.withOpacity(0.16),
                                           spreadRadius: -9,
                                           blurRadius: 18,
-                                          offset: Offset(0, 10)
+                                          offset: const Offset(0, 10)
                                         )
                                       ],
                                     color: AppColor.white,
-                                    borderRadius: BorderRadius.only(
+                                    borderRadius: const BorderRadius.only(
                                       bottomLeft: Radius.circular(10),
                                       topLeft: Radius.circular(10)
                                     )
@@ -38,7 +38,7 @@ Widget requestTile({required int index, required List data,VoidCallback? onTap})
                                           backgroundImage: NetworkImage(data[index].imageUrl),
                                           radius: 25,
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 7,
                                         ),
                                         Column(
@@ -47,8 +47,8 @@ Widget requestTile({required int index, required List data,VoidCallback? onTap})
                                           crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
                                             appText(text: data[index].name, textColor: AppColor.cyan, fontSize: 18, fontweight: FontWeight.w700),
-                                            appText(text: data[index].description, textColor: Color(0xffA2A2A2), fontSize: 13, fontweight: FontWeight.w500),
-                                            SizedBox(
+                                            appText(text: data[index].description, textColor: const Color(0xffA2A2A2), fontSize: 13, fontweight: FontWeight.w500),
+                                            const SizedBox(
                                               height: 7,
                                             ),
                                             Obx(
@@ -56,7 +56,7 @@ Widget requestTile({required int index, required List data,VoidCallback? onTap})
                                                 alignment: Alignment.center,
                                                 decoration: BoxDecoration(
                                                   borderRadius: BorderRadius.circular(3),
-                                                color: data[index].isComplete.value == false ? Color(0xffFF5555) : Color(0xff35AD4F),
+                                                color: data[index].isComplete.value == false ? const Color(0xffFF5555) : const Color(0xff35AD4F),
     
                                                 ),
                                                 height: 23,

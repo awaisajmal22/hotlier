@@ -4,7 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:hotlier/AppModules/SetupArtistModule/SetupArtist1/View/component/preofessional_search_tile.dart';
 import 'package:hotlier/AppModules/SetupArtistModule/SetupArtist2/View/SetupArtist2_view.dart';
-import 'package:hotlier/AppModules/SetupArtistModule/VIewModel/setupArtist1_view_model.dart';
+import 'package:hotlier/AppModules/SetupArtistModule/SetupArtist1/ViewModel/setupArtist1_view_model.dart';
 import 'package:hotlier/common/app_Text.dart';
 import 'package:hotlier/common/app_color.dart';
 import 'package:hotlier/common/size_config.dart';
@@ -49,7 +49,7 @@ SetupArtist1View({super.key});
             SizedBox(
               height: SizeConfig.heightMultiplier * 0.6,
             ),
-            appText(text: 'Select the favorite Designer',fontSize: 16, fontweight: FontWeight.w400, textColor: Color(0xff7A7A7A)),
+            appText(text: 'Select the favorite Designer',fontSize: 16, fontweight: FontWeight.w400, textColor: const Color(0xff7A7A7A)),
             SizedBox(
               height: SizeConfig.heightMultiplier * 2.3,
             ),
@@ -57,7 +57,7 @@ SetupArtist1View({super.key});
         ],
       )),
       body: ListView.builder(
-        padding: EdgeInsets.symmetric(
+        padding: const EdgeInsets.symmetric(
           horizontal: 30
         ),
         itemBuilder: (context, index){

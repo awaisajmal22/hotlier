@@ -18,7 +18,7 @@ Widget profileTile(
                                         backgroundImage: NetworkImage(imageUrl),
                                         radius: 25,
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         width: 24,
                                       ),
                                       Expanded(
@@ -27,7 +27,7 @@ Widget profileTile(
                                           
                                           children: [
                                             appText(text: name, textColor: AppColor.textBlack, fontSize: 18, fontweight: FontWeight.w700),
-                                            appText(text: description, textColor: Color(0xffA2A2A2),textAlign: TextAlign.justify, fontSize: 14, fontweight: FontWeight.w400),
+                                            appText(text: description, textColor: const Color(0xffA2A2A2),textAlign: TextAlign.justify, fontSize: 14, fontweight: FontWeight.w400),
                                           
                                           ],
                                         ),

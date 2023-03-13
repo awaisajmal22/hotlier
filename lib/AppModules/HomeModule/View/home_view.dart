@@ -3,9 +3,9 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:hotlier/AppModules/AuthModule/signup/Services/signup_services.dart';
-import 'package:hotlier/AppModules/BrandsModule/View/BrandsView/brands_view.dart';
+import 'package:hotlier/AppModules/BrandsModule/BrandsView/View/brands_view.dart';
 import 'package:hotlier/AppModules/CategoryModule/View/category_view.dart';
-import 'package:hotlier/AppModules/ExploreModule/View/Explore2View/explore_2_view.dart';
+import 'package:hotlier/AppModules/ExploreModule/View/Explore2/explore_2_view.dart';
 import 'package:hotlier/AppModules/HomeModule/Services/home_services.dart';
 import 'package:hotlier/AppModules/HomeModule/ViewModel/home_view_model.dart';
 import 'package:hotlier/AppModules/SetupArtistModule/SetupArtist1/View/setupArtist1_view.dart';
@@ -15,7 +15,7 @@ import 'package:hotlier/common/app_button.dart';
 import 'package:hotlier/common/app_color.dart';
 import 'package:hotlier/common/size_config.dart';
 
-import '../../ExploreModule/View/Explore1View/explore_view.dart';
+import '../../ExploreModule/View/Explore1/explore_view.dart';
 import 'component/carousel_tile.dart';
 import 'component/explore_tile.dart';
 import 'component/product_tile.dart';
@@ -65,10 +65,10 @@ class HomeView extends StatelessWidget {
                 }
                ),
         Container(
-                    margin: EdgeInsets.symmetric(vertical: 31),
+                    margin: const EdgeInsets.symmetric(vertical: 31),
                     height: 93,
                     child: ListView.builder(
-                      padding: EdgeInsets.only(left: 15),
+                      padding: const EdgeInsets.only(left: 15),
                       scrollDirection: Axis.horizontal,
                       itemCount: homeVM.productList.length,
                       itemBuilder: (context, index){
@@ -90,7 +90,7 @@ class HomeView extends StatelessWidget {
                   height: 2, width: SizeConfig.widthMultiplier * 100,
                   color: AppColor.buttonColor,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 exploreTile(title: 'Explore Professionals', seeAllButton: (){
@@ -108,10 +108,10 @@ class HomeView extends StatelessWidget {
 
                 }),
                 Container(
-                    margin: EdgeInsets.symmetric(vertical: 31),
+                    margin: const EdgeInsets.symmetric(vertical: 31),
                     height: 110,
                     child: ListView.builder(
-                      padding: EdgeInsets.only(left: 15),
+                      padding: const EdgeInsets.only(left: 15),
                       scrollDirection: Axis.horizontal,
                       itemCount: homeVM.professionalsList.length,
                       itemBuilder: (context, index){
@@ -133,49 +133,49 @@ class HomeView extends StatelessWidget {
                   height: 2, width: SizeConfig.widthMultiplier * 100,
                   color: AppColor.buttonColor,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 exploreTile(title: 'Explore Brands', seeAllButton: (){
                 Navigator.of(context).push(MaterialPageRoute(builder: (context)=> BrandsView()));
                 }), 
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Container(
-                  margin: EdgeInsets.only(left: 21),
+                  margin: const EdgeInsets.only(left: 21),
                   height: 181,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: 3,
                     itemBuilder: (context, index){
                       return Container(
-                              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 16),
+                              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 16),
 
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
-                  color: Color(0xffEDF0F2),
+                  color: const Color(0xffEDF0F2),
 
                           borderRadius: BorderRadius.circular(10)),
 
-                        margin: EdgeInsets.only(right: 10),
+                        margin: const EdgeInsets.only(right: 10),
                         height: 181,
                         width: 136,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                            
-                           CircleAvatar(
+                           const CircleAvatar(
                             backgroundImage: NetworkImage("https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014__340.jpg",),
                             radius: 50,
-                            ), SizedBox(
+                            ), const SizedBox(
                               height: 4,
                             ),
-                            appText(text: 'Ashley', textColor: Color(0xff171717),textAlign: TextAlign.center, fontSize: 14, fontweight: FontWeight.w500),
-                            SizedBox(
+                            appText(text: 'Ashley', textColor: const Color(0xff171717),textAlign: TextAlign.center, fontSize: 14, fontweight: FontWeight.w500),
+                            const SizedBox(
                               height: 5,
                             ),
-                            appText(text: 'Homestore', textColor: Color(0xff171717).withOpacity(0.6),textAlign: TextAlign.center, fontSize: 12, fontweight: FontWeight.w400),
+                            appText(text: 'Homestore', textColor: const Color(0xff171717).withOpacity(0.6),textAlign: TextAlign.center, fontSize: 12, fontweight: FontWeight.w400),
 
                           ],
                         ),

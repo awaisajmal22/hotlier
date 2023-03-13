@@ -19,7 +19,7 @@ Widget titleTile(BuildContext context, {required String title, required String s
                         Column(
                           children: [
                         appText(text: title.toUpperCase(), textColor: AppColor.textBlack.withOpacity(0.6), fontSize: 20, fontweight: FontWeight.w400),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
                          Align(
@@ -32,7 +32,7 @@ Widget titleTile(BuildContext context, {required String title, required String s
                     )),
                           ],
                         ),
-                        appButton(onTap: (){}, widget: ImageIcon(AssetImage('assets/navbar/Heart.png'), size: 19,), height: 45,width: 45, buttonColor: AppColor.white),
+                        appButton(onTap: (){}, widget: const ImageIcon(AssetImage('assets/navbar/Heart.png'), size: 19,), height: 45,width: 45, buttonColor: AppColor.white),
                 ],
               ),
             );

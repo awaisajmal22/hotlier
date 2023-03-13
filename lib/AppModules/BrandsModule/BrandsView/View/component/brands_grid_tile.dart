@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hotlier/AppModules/ExploreModule/View/Explore2View/explore_2_view.dart';
-import 'package:hotlier/AppModules/ExploreModule/ViewModel/explore_view_model.dart';
-import 'package:hotlier/common/size_config.dart';
+import 'package:hotlier/AppModules/BrandsModule/BrandsProfile/View/brands_profile_view.dart';
+import 'package:hotlier/AppModules/BrandsModule/BrandsView/ViewModel/brands_viewmodel.dart';
 
 import '../../../../../common/app_Text.dart';
 import '../../../../../common/app_color.dart';
+import '../../../../../common/size_config.dart';
 
-
-Widget gridViewTile(BuildContext context, {required ExploreViewModel exploreVM, required bool backButtonCheck}) {
+Widget brandsGridTile(BuildContext context, {required BrandsViewModel brandsVM, required String title, required String subtitle, required String imageUrl}) {
     return Obx(
       ()=> Container(
-        
-        margin: EdgeInsets.symmetric( horizontal:  5,),
-    height: backButtonCheck == false ? SizeConfig.heightMultiplier * 70.7 : SizeConfig.heightMultiplier * 65,
-    child: exploreVM.check.value == false ?  GridView.builder(
-      padding: const EdgeInsets.only(bottom: 10),
+        margin: const EdgeInsets.symmetric( horizontal:  5,),
+    height: SizeConfig.heightMultiplier * 64.94,
+    child: brandsVM.check.value == false ?  GridView.builder(
                           shrinkWrap: true,
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
@@ -30,9 +27,10 @@ Widget gridViewTile(BuildContext context, {required ExploreViewModel exploreVM, 
                           itemBuilder: (context, index) {
                             return GestureDetector(
                               onTap: () {
+
                                  Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) =>  ExploreView2()));
-                                // Get.to(() => SearchResultsView2());
+                        MaterialPageRoute(builder: (context) =>  BrandsProfileView()));
+                              
                               },
                               child: Container(
                                 decoration: const BoxDecoration(
@@ -42,38 +40,29 @@ Widget gridViewTile(BuildContext context, {required ExploreViewModel exploreVM, 
                                       BorderRadius.all(Radius.circular(10)),
                                 ),
                                 child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Container(
-                                      height: SizeConfig.heightMultiplier * 22,
-                                      width: double.infinity,
-                                      decoration: const BoxDecoration(
-                                          // border: Border.all(color: Color(0xff940D5A)),
-                                          color: Colors.white,
-                                          borderRadius: BorderRadius.only(
-                                            topRight: Radius.circular(10),
-                                            topLeft: Radius.circular(10),
-                                          ),
-                                          image: DecorationImage(
-                                            fit: BoxFit.cover,
-                                            image: AssetImage(
-                                              'assets/explore/image.png',
+                                    CircleAvatar(
+                                      radius: 50,
+                                     backgroundImage:  NetworkImage(
+                                              imageUrl,
                                             ),
-                                          )),
+                                          ),
+                                          const SizedBox(
+                                            height: 19,
+                                          ),
+                                    appText(
+                                      fontSize: 12,
+                                      fontweight: FontWeight.w500,
+                                      text: title,
+                                      textColor: AppColor.textBlack
                                     ),
-                                    Container(
-                                      padding: EdgeInsets.only(left: 10,right: 10, bottom: 5),
-                                     
-                                        alignment: Alignment.centerLeft,
-                                        height: SizeConfig.heightMultiplier * 4.5,
-                                        width: double.infinity,
-                                        child: appText(
-                                          fontSize: 15,
-                                          fontweight: FontWeight.w400,
-                                          text: 'Chair',
-                                          textColor: AppColor.textBlack
-                                        )),
+                                    appText(
+                                      fontSize: 12,
+                                      fontweight: FontWeight.w400,
+                                      text: subtitle,
+                                      textColor: AppColor.textBlack.withOpacity(0.6)
+                                    ),
                                   ],
                                 ),
                               ),
@@ -90,19 +79,19 @@ Widget gridViewTile(BuildContext context, {required ExploreViewModel exploreVM, 
                                       height: 88,
                                       width: SizeConfig.widthMultiplier * 25,
                                       decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.only(
+                                        borderRadius: const BorderRadius.only(
                                           topLeft: Radius.circular(10),
                                           bottomLeft: Radius.circular(10)
                                         ),
-                                        image: DecorationImage(image: AssetImage('assets/explore/image.png'), fit: BoxFit.cover)
+                                        image: DecorationImage(image:NetworkImage(imageUrl), fit: BoxFit.cover)
                                       ),
                                     ),
                                     Container(
-                                      padding: EdgeInsets.only(left: 53.45),
+                                      padding: const EdgeInsets.only(left: 53.45),
                                       alignment: Alignment.centerLeft,
                                       height: 88,
                                       width: SizeConfig.widthMultiplier * 62,
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         color: AppColor.buttonColor,
                                         borderRadius: BorderRadius.only(
                                           topRight: Radius.circular(10),
@@ -110,11 +99,18 @@ Widget gridViewTile(BuildContext context, {required ExploreViewModel exploreVM, 
                                         ),
                                         
                                       ),
-                                      child: appText(text: 'Chair', textColor: AppColor.textBlack, fontSize: 20, fontweight: FontWeight.w400),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          appText(text: title, textColor: AppColor.textBlack, fontSize: 12, fontweight: FontWeight.w500),
+                                          appText(text: subtitle, textColor: AppColor.textBlack.withOpacity(0.6), fontSize: 12, fontweight: FontWeight.w400),
+                                        ],
+                                      )
                                     )
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 )
                               ],

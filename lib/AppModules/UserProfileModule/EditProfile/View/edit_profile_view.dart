@@ -34,7 +34,7 @@ class EditProfileView extends StatelessWidget {
                                            Navigator.of(context).pop();
                                           }, widget: const Icon(Icons.keyboard_arrow_left, color: AppColor.darkgrey,size: 30), radius: 15, height: 45, width: 45, 
                                           buttonColor: AppColor.white),
-                                          SizedBox( width: 22,),
+                                          const SizedBox( width: 22,),
 
                                           appText(text: 'Edit Profile', fontSize: 24, fontweight: FontWeight.w700, textColor: AppColor.textBlack),     
                                 ],
@@ -70,7 +70,7 @@ class EditProfileView extends StatelessWidget {
                                                       ) : Container(
                                                         height: SizeConfig.heightMultiplier * 16.8,
                                                         width: SizeConfig.widthMultiplier * 34.4,
-                                                        decoration: BoxDecoration(
+                                                        decoration: const BoxDecoration(
                                                           shape: BoxShape.circle,
                                                           // image: DecorationImage(image: FileImage(File(editProfileVM.image.value)), fit: BoxFit.cover)
                                                         ),
@@ -113,7 +113,7 @@ class EditProfileView extends StatelessWidget {
                         
                        }
                        ),
-                      SizedBox(
+                      const SizedBox(
                         height: 21,
                       ),
                       editProfileFormField(controller: editProfileVM.bussinessController, title: 'Bussiness type',readOnly: editProfileVM.readOnly3.value,
@@ -121,7 +121,7 @@ class EditProfileView extends StatelessWidget {
                       editProfileVM.readOnly3.value = !editProfileVM.readOnly3.value;
                   
                       }),
-                       SizedBox(
+                       const SizedBox(
                         height: 21,
                       ),
                       editProfileFormField(controller: editProfileVM.addressController, title: 'Address', maxLine: null,readOnly: editProfileVM.readOnly4.value,

@@ -23,7 +23,7 @@ class CartView extends StatelessWidget {
       bottomSheet: Container(
         height: SizeConfig.heightMultiplier * 25,
         color: AppColor.whiteF5,
-        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 30),
+        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -34,20 +34,20 @@ class CartView extends StatelessWidget {
                  Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  appText(text: 'Item total', textColor: Color(0xff979797),fontSize: 14, fontweight: FontWeight.w500),
-                  appText(text: cartVM.cartList.length.toString(), textColor: Color(0xff979797),fontSize: 14, fontweight: FontWeight.w500),
+                  appText(text: 'Item total', textColor: const Color(0xff979797),fontSize: 14, fontweight: FontWeight.w500),
+                  appText(text: cartVM.cartList.length.toString(), textColor: const Color(0xff979797),fontSize: 14, fontweight: FontWeight.w500),
 
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Container(
                 height: 1,
                 width: SizeConfig.widthMultiplier * 100,
-                color: Color(0xffDADADA),
+                color: const Color(0xffDADADA),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
@@ -65,7 +65,7 @@ class CartView extends StatelessWidget {
            ),
             appButton(onTap: (){
           Get.to(CartRequestView(projectName: projectName,));
-        }, widget: appText(text: 'Select or create project', fontSize: 16, fontweight: FontWeight.w400, textColor: Color(0xffF3F5F6),), 
+        }, widget: appText(text: 'Select or create project', fontSize: 16, fontweight: FontWeight.w400, textColor: const Color(0xffF3F5F6),), 
         height:  SizeConfig.heightMultiplier * 8.2,
         width: SizeConfig.widthMultiplier * 100,
          buttonColor: AppColor.cyan
@@ -87,38 +87,38 @@ class CartView extends StatelessWidget {
                            Navigator.of(context).pop();
                           }, widget: const Icon(Icons.keyboard_arrow_left, color: AppColor.darkgrey,size: 30), radius: 15, height: 45, width: 45, 
                           buttonColor: AppColor.white),
-                          SizedBox( width: 22,),
+                          const SizedBox( width: 22,),
                           appText(text: 'Add to Cart', fontSize: 24, fontweight: FontWeight.w700, textColor: AppColor.textBlack),
                           
                          
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
                             height: 31,
                           ),
             Row(
                           children: [
                             Expanded(
                               child: Container(
-                                color: Color(0xffC2C3CB),
+                                color: const Color(0xffC2C3CB),
                                 height: 1,
                               ),
                             ),
-                            SizedBox(width: 4.5,),
+                            const SizedBox(width: 4.5,),
                           appText(text: 'Products', fontSize: 20, fontweight: FontWeight.w400,textAlign: TextAlign.start, textColor: AppColor.textBlack.withOpacity(0.6)),
-                          SizedBox(
+                          const SizedBox(
                             width: 4.5,
                           ),
                           Expanded(
                             child: Container(
-                                color: Color(0xffC2C3CB),
+                                color: const Color(0xffC2C3CB),
                                 height: 1,
                               ),
                           ),
                           ],
                          ),
-                         SizedBox(
+                         const SizedBox(
                           height: 19,
                          ),
                           Container(

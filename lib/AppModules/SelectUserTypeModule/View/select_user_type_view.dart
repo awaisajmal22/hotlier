@@ -46,7 +46,7 @@ final selectUserTpeVM = Get.put(SignUpViewModel());
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20.9,
             ),
         Column(
@@ -58,16 +58,16 @@ final selectUserTpeVM = Get.put(SignUpViewModel());
             child: Obx(
               ()=> Container(
                 alignment: Alignment.centerLeft,
-                padding: EdgeInsets.only(left: 25),
-                margin: EdgeInsets.symmetric(horizontal: 35, vertical: 9),
+                padding: const EdgeInsets.only(left: 25),
+                margin: const EdgeInsets.symmetric(horizontal: 35, vertical: 9),
                   height: 65.52,
                   decoration: BoxDecoration(
                     boxShadow: [
                       BoxShadow(
                         blurRadius: 22,
                         spreadRadius: -1,
-                        offset: Offset(0, 4),
-                        color: Color(0xff2E404D).withOpacity(0.15)
+                        offset: const Offset(0, 4),
+                        color: const Color(0xff2E404D).withOpacity(0.15)
                       )
                     ],
                     color:  AppColor.white,
@@ -77,7 +77,7 @@ final selectUserTpeVM = Get.put(SignUpViewModel());
                     ),
                     borderRadius: BorderRadius.circular(12.85)
                   ),
-                  child: appText(text: selectUserTpeVM.selectTypeList[index], textColor: selectUserTpeVM.selectedIndex == index ? AppColor.cyan : Color(0xffC2C3CB), fontSize: 14),
+                  child: appText(text: selectUserTpeVM.selectTypeList[index], textColor: selectUserTpeVM.selectedIndex == index ? AppColor.cyan : const Color(0xffC2C3CB), fontSize: 14),
                 ),
             ),
           )),

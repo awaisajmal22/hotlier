@@ -25,6 +25,7 @@ Widget favoriteBrandsTile(
                             CircleAvatar(
                               radius: 50,
                                 backgroundImage:  NetworkImage(imageUrl),),
+                                // ignore: prefer_const_constructors
                                 SizedBox(
                                   height: 4,
                                 ),

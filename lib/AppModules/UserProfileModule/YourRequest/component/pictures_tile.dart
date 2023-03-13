@@ -57,7 +57,7 @@ Widget picturesTile(
                                                     onTap: (){
                                                       GallerySaver.saveImage(imageUrl);
                                                     },
-                                                    child: FaIcon(FontAwesomeIcons.arrowDown, size: 12,color: AppColor.white,)),
+                                                    child: const FaIcon(FontAwesomeIcons.arrowDown, size: 12,color: AppColor.white,)),
                                                 ),
                                         Column(
                                           mainAxisAlignment: MainAxisAlignment.center,
@@ -77,7 +77,7 @@ Widget picturesTile(
     
                                           ],
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 5,
                                         )
                                       ],

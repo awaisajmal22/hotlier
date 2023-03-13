@@ -23,7 +23,7 @@ Widget selectScopeTile(
                           cartrequestVM.scopecheck.value = !cartrequestVM.scopecheck.value;
                         },
                         child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 17),
+                          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 17),
                           decoration: BoxDecoration(
                           color: AppColor.cyan,
                       
@@ -55,7 +55,7 @@ Widget selectScopeTile(
                 ),
         AnimatedOpacity(
                     
-                    duration: Duration(seconds: 1),
+                    duration: const Duration(seconds: 1),
                     curve: Curves.easeInOutBack,
                      
                     opacity: cartrequestVM.scopecheck.value == true ? 1.0 : 0.0,
@@ -65,7 +65,7 @@ Widget selectScopeTile(
                         color: AppColor.buttonColor,
                         borderRadius: BorderRadius.circular(10)
                       ),
-                      padding: EdgeInsets.symmetric(horizontal: 20,),
+                      padding: const EdgeInsets.symmetric(horizontal: 20,),
                     
                       child: Column(
                               children: List.generate(cartrequestVM.scopeList.length, (index) => GestureDetector(
@@ -78,17 +78,17 @@ Widget selectScopeTile(
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 15,
                                       ),
                                       appText(text: cartrequestVM.scopeList[index], textColor: AppColor.textBlack, fontSize: 15, fontweight: FontWeight.w400),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 13,
                                       ),
                                      index != cartrequestVM.scopeList.length - 1  ? Container(
                                         width: SizeConfig.widthMultiplier * 100,
                                         height: 1,
-                                        color: Color(0xffDBDBDB),
+                                        color: const Color(0xffDBDBDB),
                                       ) : Container()
                                     ],
                                   ),

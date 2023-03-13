@@ -31,14 +31,14 @@ class NotificationView extends StatelessWidget {
                                            Navigator.of(context).pop();
                                           }, widget: const Icon(Icons.keyboard_arrow_left, color: AppColor.darkgrey,size: 30), radius: 15, height: 45, width: 45, 
                                           buttonColor: AppColor.white),
-                                          SizedBox( width: 22,),
+                                          const SizedBox( width: 22,),
 
-                                          appText(text: 'Notification', fontSize: 24, fontweight: FontWeight.w700, textColor: AppColor.textBlack),     
+                                          appText(text: 'Notification', fontSize: 24, fontweight: FontWeight.w700, textColor: AppColor.textBlack, textOverflow: TextOverflow.ellipsis),     
                                 ],
                               ),
             ),
             Container(
-              padding: EdgeInsets.only(top: 32),
+              padding: const EdgeInsets.only(top: 32),
               height: SizeConfig.heightMultiplier * 88.23,
               child: slidableTile(notification: notificationVM.notificationList)
             )

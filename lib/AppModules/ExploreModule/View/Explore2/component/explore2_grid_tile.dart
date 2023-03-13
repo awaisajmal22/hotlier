@@ -33,25 +33,25 @@ Widget explore2GridTile(
         child: Column(
           children: [
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
               alignment: Alignment.topRight,
               height: SizeConfig.heightMultiplier * 15,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   topRight: Radius.circular(10),
                   topLeft: Radius.circular(10),
                 
                 ),
                 image: DecorationImage(image: AssetImage(imageUrl), fit: BoxFit.cover)
               ),
-              child: appButton(onTap: addFavorite, widget:ImageIcon(AssetImage('assets/navbar/Heart.png'), size: 13, color: check == false? AppColor.black : Color(0xffFF5555) ,), height: 27,width: 27, buttonColor: AppColor.white),
+              child: appButton(onTap: addFavorite, widget:ImageIcon(const AssetImage('assets/navbar/Heart.png'), size: 13, color: check == false? AppColor.black : const Color(0xffFF5555) ,), height: 27,width: 27, buttonColor: AppColor.white),
             ),
             Container(
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 vertical: 12
               ),
               alignment: Alignment.center,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10), bottomRight: Radius.circular(10)),
                 color: AppColor.buttonColor,
               ),

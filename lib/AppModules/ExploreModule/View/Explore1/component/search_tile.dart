@@ -3,7 +3,11 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../../../common/app_color.dart';
 
-Widget brandsSearchTile(BuildContext context) {
+Widget searchTile(BuildContext context,
+{
+  required TextEditingController? controller,
+  required GestureDetector? suffixIcon
+}) {
     return Container(
                   width: MediaQuery.of(context).size.width / 1.33,
                   height: 51,
@@ -23,24 +27,18 @@ Widget brandsSearchTile(BuildContext context) {
                       decoration: InputDecoration(
                         enabled: true,
                         filled: true,
-                        contentPadding: const EdgeInsets.symmetric(vertical: 13),
+                        contentPadding: const EdgeInsets.symmetric(vertical: 13, horizontal:  10),
                         fillColor: AppColor.buttonColor,
                         hintText: "Search furniture",
-                        hintStyle:  TextStyle(
+                        hintStyle:  const TextStyle(
                           color: AppColor.lightgrey,
                           fontSize: 12,
                           fontWeight: FontWeight.w400
                         ),
                         
-                        suffixIcon: GestureDetector(
-                          onTap: (){},
-                          child: const Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 13),
-                            child: const FaIcon(FontAwesomeIcons.sliders, color: AppColor.darkgrey,),
-                          ),
-                        ),
-                        prefixIcon:  Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 13,vertical: 13),
+                        suffixIcon: suffixIcon,
+                        prefixIcon:  const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 13,vertical: 13),
                             child: ImageIcon(AssetImage('assets/navbar/Search.png'), color: AppColor.lightgrey,),
                           ),
                         border: OutlineInputBorder(

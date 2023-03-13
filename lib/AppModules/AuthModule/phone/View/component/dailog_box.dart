@@ -38,34 +38,34 @@ class customDailog extends StatelessWidget {
               BoxShadow(
                 spreadRadius: 0,
                 blurRadius: 55.48,
-                offset: Offset(0, 13.32),
-                color: Color(0xff251F30).withOpacity(0.05)
+                offset: const Offset(0, 13.32),
+                color: const Color(0xff251F30).withOpacity(0.05)
               )
             ],
             color: AppColor.white
           ),
           alignment: Alignment.center,
           height: SizeConfig.heightMultiplier * 60,
-          padding: EdgeInsets.symmetric(horizontal: 21, vertical: 40),
+          padding: const EdgeInsets.symmetric(horizontal: 21, vertical: 40),
           child: Column(
             
             children: [
               Align(
                 alignment: Alignment.center,
                 child: appText(text:"Verify $title", textColor: AppColor.textBlack, fontSize: 22, fontweight: FontWeight.w700)),
-              SizedBox(
+              const SizedBox(
                 height: 11,
               ),
               Align(
                 alignment: Alignment.center,
                 child: appText(text: 'We Have Sent Code To Your $title', textColor: AppColor.lightgrey, fontSize: 14, fontweight: FontWeight.w400)),
-              SizedBox(
+              const SizedBox(
                 height: 39,
               ),
               Align(
                 alignment: Alignment.center,
                 child: appText(text: subtitle, textColor: AppColor.lightgrey, fontSize: 14, fontweight: FontWeight.w400)),
-              SizedBox(
+              const SizedBox(
                 height: 29,
               ),
               PinCodeTextField(
@@ -78,7 +78,7 @@ class customDailog extends StatelessWidget {
                 },
                 showCursor: true,
                 cursorColor: AppColor.cyan,
-                textStyle: TextStyle(
+                textStyle: const TextStyle(
                   color: AppColor.cyan
                 ),
                 pinTheme: PinTheme(
@@ -88,7 +88,7 @@ class customDailog extends StatelessWidget {
                   borderRadius: BorderRadius.circular(13),
                   activeFillColor: AppColor.white,
                   selectedColor: AppColor.cyan,
-                  inactiveColor: Color(0xffC2C3CB),
+                  inactiveColor: const Color(0xffC2C3CB),
                   disabledColor: AppColor.cyan,
                   activeColor: AppColor.cyan,
                 

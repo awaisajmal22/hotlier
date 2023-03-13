@@ -21,7 +21,7 @@ Widget staggeredBrandTile(
           
             crossAxisCellCount: 1,
             mainAxisCellCount: index.isEven  ? 2 : 1,
-            child: Image(image: AssetImage('assets/explore/image.png'), fit: BoxFit.cover,)
+            child: const Image(image: AssetImage('assets/explore/image.png'), fit: BoxFit.cover,)
           ),
           // StaggeredGridTile.count(
           //   crossAxisCellCount: 1,

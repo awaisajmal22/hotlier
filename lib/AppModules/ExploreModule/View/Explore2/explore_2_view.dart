@@ -3,8 +3,8 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:hotlier/AppModules/ExploreModule/View/Explore2View/component/explore2_grid_tile.dart';
-import 'package:hotlier/AppModules/ExploreModule/View/Explore2View/component/filter_bottom_sheet.dart';
+import 'package:hotlier/AppModules/ExploreModule/View/Explore2/component/explore2_grid_tile.dart';
+import 'package:hotlier/AppModules/ExploreModule/View/Explore2/component/filter_bottom_sheet.dart';
 import 'package:hotlier/AppModules/ExploreModule/ViewModel/explore_view_model.dart';
 import 'package:hotlier/AppModules/FavoriteModule/ViewModel/favorite_view_model.dart';
 
@@ -12,7 +12,7 @@ import '../../../../common/app_Text.dart';
 import '../../../../common/app_button.dart';
 import '../../../../common/app_color.dart';
 import '../../../../common/size_config.dart';
-import '../Explore1View/component/search_tile.dart';
+import '../Explore1/component/search_tile.dart';
 import 'component/explore2Listview.dart';
 
 class ExploreView2 extends StatelessWidget {
@@ -28,8 +28,7 @@ class ExploreView2 extends StatelessWidget {
       },
       child: Scaffold(
         body: SafeArea(
-          child: ListView(
-              physics: NeverScrollableScrollPhysics(),
+          child: Column(
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 35),
@@ -45,7 +44,7 @@ class ExploreView2 extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
               Padding(
@@ -67,12 +66,12 @@ class ExploreView2 extends StatelessWidget {
                                 );
                             },
                             child: const Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 13),
-                              child: const FaIcon(FontAwesomeIcons.sliders, color: AppColor.darkgrey,),
+                              padding:  EdgeInsets.symmetric(horizontal: 13, vertical: 13),
+                              child: FaIcon(FontAwesomeIcons.sliders, color: AppColor.darkgrey,),
                             ),
                           ),
                           controller: null ),
-                        SizedBox(
+                        const SizedBox(
                           width: 7,
                         ),
                        Obx(
@@ -81,7 +80,7 @@ class ExploreView2 extends StatelessWidget {
                                 exploreVM.check.value = !exploreVM.check.value;
                               },
                               child: Container(
-                                padding: EdgeInsets.all(15),
+                                padding: const EdgeInsets.all(15),
                                 alignment: Alignment.center,
                                 height: 51,
                                 width: 51,
@@ -89,7 +88,7 @@ class ExploreView2 extends StatelessWidget {
                                   color: AppColor.buttonColor,
                                   borderRadius: BorderRadius.circular(12)
                                 ),
-                                child: exploreVM.check.value ? Image.asset('assets/explore/card.png') : FaIcon(FontAwesomeIcons.list, color: AppColor.darkgrey,),
+                                child: exploreVM.check.value ? Image.asset('assets/explore/card.png') : const FaIcon(FontAwesomeIcons.list, color: AppColor.darkgrey,),
                               ),
                             ),
                        ),
@@ -97,16 +96,16 @@ class ExploreView2 extends StatelessWidget {
       
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 17,
                     ),
                Obx(
                 ()=> SizedBox(
                   width: SizeConfig.widthMultiplier * 100,
-                  height: SizeConfig.heightMultiplier * 70.8,
+                  height: SizeConfig.heightMultiplier * 70.7,
                   // color: AppColor.cyan,
                   child: exploreVM.check.value == false ? GridView.builder(
-                    padding: EdgeInsets.only(bottom: 10),
+                    padding: const EdgeInsets.only(bottom: 10),
                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                        
                        crossAxisSpacing: 10,

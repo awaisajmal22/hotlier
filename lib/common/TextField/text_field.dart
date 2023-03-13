@@ -25,7 +25,7 @@ Widget textFormField(
         color: AppColor.shadowColor.withOpacity(0.15),
         spreadRadius: -1,
         blurRadius: 22,
-        offset: Offset(0, 4), // changes position of shadow
+        offset: const Offset(0, 4), // changes position of shadow
       ),
       ],
       borderRadius: BorderRadius.circular(radius)
@@ -38,16 +38,16 @@ Widget textFormField(
       autofocus: false,
       obscureText: obsecure,
       cursorColor: AppColor.cyan,
-      style: TextStyle(
-        
+      style: const TextStyle(
+        fontFamily: 'DS Pro Display',
         color:  AppColor.lightgrey
       ),
       decoration: InputDecoration(
         
-        contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 22.9),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 22.9),
 
         hintText: hintText,
-        hintStyle: TextStyle(
+        hintStyle: const TextStyle(
           color: AppColor.lightgrey,
         
         ),
@@ -62,24 +62,24 @@ Widget textFormField(
         enabled: true,
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(radius),
-        borderSide: BorderSide(
+        borderSide: const BorderSide(
           color: AppColor.cyan
         ) 
         ),
        border: OutlineInputBorder(
-        borderSide: BorderSide(
+        borderSide: const BorderSide(
           color: AppColor.transparent
         ),
         borderRadius: BorderRadius.circular(radius)
        ),
        enabledBorder:   OutlineInputBorder(
-        borderSide: BorderSide(
+        borderSide: const BorderSide(
           color: AppColor.transparent
         ),
         borderRadius: BorderRadius.circular(radius)
        ),
        errorBorder: OutlineInputBorder(
-        borderSide: BorderSide(
+        borderSide: const BorderSide(
           color: AppColor.transparent
         ),
         borderRadius: BorderRadius.circular(radius)

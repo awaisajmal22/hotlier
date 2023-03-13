@@ -3,7 +3,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 
-import 'package:hotlier/AppModules/ExploreModule/View/Explore1View/explore_view.dart';
+import 'package:hotlier/AppModules/ExploreModule/View/Explore1/explore_view.dart';
 
 import '../FavoriteModule/View/favorite_view.dart';
 import '../HomeModule/View/home_view.dart';

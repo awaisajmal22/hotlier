@@ -16,10 +16,10 @@ Widget colorsTile({required DetailViewModel detailVM}){
            crossAxisAlignment: CrossAxisAlignment.start,
            children: [
              appText(text: 'Avalaible Colors', fontSize: 14, fontweight: FontWeight.w400, textColor: AppColor.textBlack.withOpacity(0.6)),
-              SizedBox(
+              const SizedBox(
            height: 12,
           ),
-             Container(
+             SizedBox(
                width: SizeConfig.widthMultiplier * 61,
                height: 24,
                child: ListView(
@@ -33,7 +33,7 @@ Widget colorsTile({required DetailViewModel detailVM}){
                    },
                    child: Obx(
                      ()=> Container(
-                       margin: EdgeInsets.symmetric(horizontal: 3),
+                       margin: const EdgeInsets.symmetric(horizontal: 3),
                        height: 24,
                        width: 24,
                        decoration: BoxDecoration(
@@ -41,7 +41,7 @@ Widget colorsTile({required DetailViewModel detailVM}){
                          borderRadius: BorderRadius.circular(detailVM.selectedColor == index ? 4 : 100),
                          border: Border.all(
                            width: 2,
-                           color: detailVM.selectedColor == index ? Color(0xff323142) : Colors.transparent
+                           color: detailVM.selectedColor == index ? const Color(0xff323142) : Colors.transparent
                          )
                        ),
                      ),
@@ -51,7 +51,7 @@ Widget colorsTile({required DetailViewModel detailVM}){
              ),
            ],
           ),
-          SizedBox(
+          const SizedBox(
            height: 12,
           ),
           Column(
@@ -59,7 +59,7 @@ Widget colorsTile({required DetailViewModel detailVM}){
            children: [
              
              appText(text: 'From', fontSize: 14, fontweight: FontWeight.w400, textAlign: TextAlign.left, textColor: AppColor.textBlack.withOpacity(0.6)),
-             SizedBox(height: 12,),
+             const SizedBox(height: 12,),
              appText(text: '\$35.00', fontSize: 14, fontweight: FontWeight.w700, textAlign: TextAlign.left, textColor: AppColor.textBlack),
 
            ],

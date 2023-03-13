@@ -3,7 +3,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:hotlier/AppModules/CategoryModule/View/component/category_tile.dart';
-import 'package:hotlier/AppModules/ExploreModule/View/Explore1View/explore_view.dart';
+import 'package:hotlier/AppModules/ExploreModule/View/Explore1/explore_view.dart';
 import 'package:hotlier/AppModules/HomeModule/ViewModel/home_view_model.dart';
 import 'package:hotlier/common/app_Text.dart';
 import 'package:hotlier/common/app_button.dart';
@@ -26,7 +26,7 @@ class CategoryView extends StatelessWidget {
         child: Column(
           children: [
        Padding(
-                padding:  EdgeInsets.symmetric(horizontal: 35),
+                padding:  const EdgeInsets.symmetric(horizontal: 35),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -42,12 +42,12 @@ class CategoryView extends StatelessWidget {
                   ],
                 ),
               ),
-            Container(
+            SizedBox(
               height: SizeConfig.heightMultiplier * 70,
               child: GridView.builder(
-                      padding: EdgeInsets.symmetric(vertical: 31),
+                      padding: const EdgeInsets.symmetric(vertical: 31),
                       itemCount: categoryList.length,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 3,
       
                     ), itemBuilder: (context, index){

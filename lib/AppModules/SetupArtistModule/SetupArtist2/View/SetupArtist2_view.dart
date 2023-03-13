@@ -7,7 +7,7 @@ import 'package:hotlier/AppModules/DetailModule/View/component/description_tile.
 import 'package:hotlier/AppModules/SetupArtistModule/SetupArtist2/View/component/description_tile.dart';
 import 'package:hotlier/AppModules/SetupArtistModule/SetupArtist2/View/component/richtext_tile.dart';
 import 'package:hotlier/AppModules/SetupArtistModule/SetupArtist2/View/component/staggeredTile.dart';
-import 'package:hotlier/AppModules/SetupArtistModule/VIewModel/setupArtist2_view_model.dart';
+import 'package:hotlier/AppModules/SetupArtistModule/SetupArtist2/ViewModel/setupArtist2_view_model.dart';
 import 'package:hotlier/AppModules/UserProfileModule/CreateOrSelectProject/View/create_or_select_project_view.dart';
 import 'package:hotlier/common/app_Text.dart';
 import 'package:hotlier/common/size_config.dart';
@@ -47,7 +47,7 @@ class SetupArtis2View extends StatelessWidget {
                                            Navigator.of(context).pop();
                                           }, widget: const Icon(Icons.keyboard_arrow_left, color: AppColor.darkgrey,size: 30), radius: 15, height: 45, width: 45, 
                                           buttonColor: AppColor.white),
-                                          SizedBox( width: 22,),
+                                          const SizedBox( width: 22,),
       
                                 ],
                               ),
@@ -65,7 +65,7 @@ class SetupArtis2View extends StatelessWidget {
                       BoxShadow(
                         spreadRadius: -1,
                         blurRadius: 22,
-                        offset: Offset(0, 10),
+                        offset: const Offset(0, 10),
                         color: AppColor.shadowColor.withOpacity(0.15)
                       ),
                       
@@ -87,8 +87,8 @@ class SetupArtis2View extends StatelessWidget {
                          Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Image(image: AssetImage('assets/profile/Location.png'), width: 15.36, height: 18.27,color: AppColor.white,),
-                            SizedBox(width: 18,),
+                            const Image(image: AssetImage('assets/profile/Location.png'), width: 15.36, height: 18.27,color: AppColor.white,),
+                            const SizedBox(width: 18,),
                              Expanded(child: appText(text: 'Address: 43 Oxford Road, M13 4GRManchester, UK',textAlign: TextAlign.start, fontSize: 15, textColor: AppColor.white, fontweight: FontWeight.w400))
                           ],
                         ),
@@ -106,10 +106,10 @@ class SetupArtis2View extends StatelessWidget {
                             spreadRadius: 6,
                             blurRadius: 20,
                             color: AppColor.black.withOpacity(0.06),
-                            offset: Offset(0,4),
+                            offset: const Offset(0,4),
                           )
                         ],
-                        image: DecorationImage(image: NetworkImage('https://images.pexels.com/photos/7505201/pexels-photo-7505201.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load'), fit: BoxFit.cover)
+                        image: const DecorationImage(image: NetworkImage('https://images.pexels.com/photos/7505201/pexels-photo-7505201.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load'), fit: BoxFit.cover)
                       ),
                         height: SizeConfig.heightMultiplier * 12,
                         width: SizeConfig.widthMultiplier * 24,
@@ -127,7 +127,7 @@ class SetupArtis2View extends StatelessWidget {
                 width: SizeConfig.widthMultiplier * 100,
                 child: ListView(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 22,
                     ),
                     SizedBox(
@@ -152,7 +152,7 @@ class SetupArtis2View extends StatelessWidget {
     fontSize: 12,
                    lessText: 'This armchair is an elegant and functional piece of furniture. ',
                    moreText: 'This armchair is an elegant and functional piece of furniture. It is suitable for family visits and parties with friends and perfect for relaxing in front of the TV after hard work. '),
-                    SizedBox(
+                    const SizedBox(
                     height: 12,
                   ),
     

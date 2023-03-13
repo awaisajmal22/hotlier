@@ -37,8 +37,8 @@ filterBottomSheet(
       child: ListView(
         // crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          appText(text: 'Color', fontSize: 16, fontweight: FontWeight.w600, textColor: Color(0xff191919)),
-          SizedBox(
+          appText(text: 'Color', fontSize: 16, fontweight: FontWeight.w600, textColor: const Color(0xff191919)),
+          const SizedBox(
             height: 12,
           ),
           Wrap(
@@ -62,19 +62,19 @@ filterBottomSheet(
                     color: selectedColor.value == index ? AppColor.cyan : AppColor.white,
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(
-                      color: selectedColor == index ? AppColor.transparent : Color(0xffDADADA),
+                      color: selectedColor == index ? AppColor.transparent : const Color(0xffDADADA),
                       width: 1
                     )
                   ),
-                  child: appText(text: colors[index], textColor: selectedColor.value == index ? AppColor.white : Color(0xff191919), fontSize: 14, fontweight: FontWeight.w500),
+                  child: appText(text: colors[index], textColor: selectedColor.value == index ? AppColor.white : const Color(0xff191919), fontSize: 14, fontweight: FontWeight.w500),
                              ),
                ),
              ))),
           SizedBox(
             height: SizeConfig.heightMultiplier * 4,
           ),
-           appText(text: 'Material', fontSize: 16, fontweight: FontWeight.w600, textColor: Color(0xff191919)),
-          SizedBox(
+           appText(text: 'Material', fontSize: 16, fontweight: FontWeight.w600, textColor: const Color(0xff191919)),
+          const SizedBox(
             height: 12,
           ),
           Wrap(
@@ -98,11 +98,11 @@ filterBottomSheet(
                     color: selectedMaterial.value == index ? AppColor.cyan : AppColor.white,
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(
-                      color: selectedMaterial == index ? AppColor.transparent : Color(0xffDADADA),
+                      color: selectedMaterial == index ? AppColor.transparent : const Color(0xffDADADA),
                       width: 1
                     )
                   ),
-                  child: appText(text: material[index], textColor: selectedMaterial.value == index ? AppColor.white : Color(0xff191919), fontSize: 14, fontweight: FontWeight.w500),
+                  child: appText(text: material[index], textColor: selectedMaterial.value == index ? AppColor.white : const Color(0xff191919), fontSize: 14, fontweight: FontWeight.w500),
                              ),
                ),
              ))),
@@ -111,7 +111,7 @@ filterBottomSheet(
              ),
              appButton(onTap: (){
               Get.back();
-             }, widget: appText(text: 'Select',fontSize: 16, fontweight:  FontWeight.w500, textColor:Color(0xffF3F5F6)),
+             }, widget: appText(text: 'Select',fontSize: 16, fontweight:  FontWeight.w500, textColor:const Color(0xffF3F5F6)),
              width: SizeConfig.widthMultiplier * 100,
              height: 66,
              radius: 14,buttonColor: AppColor.cyan

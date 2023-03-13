@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hotlier/AppModules/BrandsModule/View/BrandsProfileView/brands_profile_view.dart';
-import 'package:hotlier/AppModules/BrandsModule/ViewModel/brands_viewmodel.dart';
+import 'package:hotlier/AppModules/ExploreModule/View/Explore2/explore_2_view.dart';
+import 'package:hotlier/AppModules/ExploreModule/ViewModel/explore_view_model.dart';
+import 'package:hotlier/common/size_config.dart';
 
 import '../../../../../common/app_Text.dart';
 import '../../../../../common/app_color.dart';
-import '../../../../../common/size_config.dart';
 
-Widget brandsGridTile(BuildContext context, {required BrandsViewModel brandsVM, required String title, required String subtitle, required String imageUrl}) {
+
+Widget gridViewTile(BuildContext context, {required ExploreViewModel exploreVM, required bool backButtonCheck}) {
     return Obx(
       ()=> Container(
-        margin: EdgeInsets.symmetric( horizontal:  5,),
-    height: SizeConfig.heightMultiplier * 65,
-    child: brandsVM.check.value == false ?  GridView.builder(
+        
+        margin: const EdgeInsets.symmetric( horizontal:  5,),
+    height: backButtonCheck == false ? SizeConfig.heightMultiplier * 70.55 : SizeConfig.heightMultiplier * 64.94,
+    child: exploreVM.check.value == false ?  GridView.builder(
+      padding: const EdgeInsets.only(bottom: 10),
                           shrinkWrap: true,
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
@@ -27,10 +30,9 @@ Widget brandsGridTile(BuildContext context, {required BrandsViewModel brandsVM, 
                           itemBuilder: (context, index) {
                             return GestureDetector(
                               onTap: () {
-
                                  Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) =>  BrandsProfileView()));
-                              
+                        MaterialPageRoute(builder: (context) =>  ExploreView2()));
+                                // Get.to(() => SearchResultsView2());
                               },
                               child: Container(
                                 decoration: const BoxDecoration(
@@ -40,29 +42,38 @@ Widget brandsGridTile(BuildContext context, {required BrandsViewModel brandsVM, 
                                       BorderRadius.all(Radius.circular(10)),
                                 ),
                                 child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
-                                    CircleAvatar(
-                                      radius: 50,
-                                     backgroundImage:  NetworkImage(
-                                              imageUrl,
+                                    Container(
+                                      height: SizeConfig.heightMultiplier * 22,
+                                      width: double.infinity,
+                                      decoration: const BoxDecoration(
+                                          // border: Border.all(color: Color(0xff940D5A)),
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.only(
+                                            topRight: Radius.circular(10),
+                                            topLeft: Radius.circular(10),
+                                          ),
+                                          image: DecorationImage(
+                                            fit: BoxFit.cover,
+                                            image: AssetImage(
+                                              'assets/explore/image.png',
                                             ),
-                                          ),
-                                          SizedBox(
-                                            height: 19,
-                                          ),
-                                    appText(
-                                      fontSize: 12,
-                                      fontweight: FontWeight.w500,
-                                      text: title,
-                                      textColor: AppColor.textBlack
+                                          )),
                                     ),
-                                    appText(
-                                      fontSize: 12,
-                                      fontweight: FontWeight.w400,
-                                      text: subtitle,
-                                      textColor: AppColor.textBlack.withOpacity(0.6)
-                                    ),
+                                    Container(
+                                      padding: const EdgeInsets.only(left: 10,right: 10, bottom: 5),
+                                     
+                                        alignment: Alignment.centerLeft,
+                                        height: SizeConfig.heightMultiplier * 4.5,
+                                        width: double.infinity,
+                                        child: appText(
+                                          fontSize: 15,
+                                          fontweight: FontWeight.w400,
+                                          text: 'Chair',
+                                          textColor: AppColor.textBlack
+                                        )),
                                   ],
                                 ),
                               ),
@@ -78,20 +89,20 @@ Widget brandsGridTile(BuildContext context, {required BrandsViewModel brandsVM, 
                                     Container(
                                       height: 88,
                                       width: SizeConfig.widthMultiplier * 25,
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         borderRadius: BorderRadius.only(
                                           topLeft: Radius.circular(10),
                                           bottomLeft: Radius.circular(10)
                                         ),
-                                        image: DecorationImage(image:NetworkImage(imageUrl), fit: BoxFit.cover)
+                                        image: DecorationImage(image: AssetImage('assets/explore/image.png'), fit: BoxFit.cover)
                                       ),
                                     ),
                                     Container(
-                                      padding: EdgeInsets.only(left: 53.45),
+                                      padding: const EdgeInsets.only(left: 53.45),
                                       alignment: Alignment.centerLeft,
                                       height: 88,
                                       width: SizeConfig.widthMultiplier * 62,
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         color: AppColor.buttonColor,
                                         borderRadius: BorderRadius.only(
                                           topRight: Radius.circular(10),
@@ -99,18 +110,11 @@ Widget brandsGridTile(BuildContext context, {required BrandsViewModel brandsVM, 
                                         ),
                                         
                                       ),
-                                      child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        children: [
-                                          appText(text: title, textColor: AppColor.textBlack, fontSize: 12, fontweight: FontWeight.w500),
-                                          appText(text: subtitle, textColor: AppColor.textBlack.withOpacity(0.6), fontSize: 12, fontweight: FontWeight.w400),
-                                        ],
-                                      )
+                                      child: appText(text: 'Chair', textColor: AppColor.textBlack, fontSize: 20, fontweight: FontWeight.w400),
                                     )
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 )
                               ],

@@ -16,7 +16,7 @@ Widget attechmentButton({
     onTap: onTap,
     child: Container(
       alignment: Alignment.center,
-      padding: EdgeInsets.only(top: 13,bottom: 13, left: 21),
+      padding: const EdgeInsets.only(top: 13,bottom: 13, left: 21),
       height: height,
       width: width,
       decoration: BoxDecoration(
@@ -27,7 +27,7 @@ Widget attechmentButton({
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Image(image: AssetImage(icon),),
-          SizedBox(
+          const SizedBox(
             width: 8,
           ),
           appText(text: text, textColor: AppColor.white, fontSize: 14, fontweight: FontWeight.w400)

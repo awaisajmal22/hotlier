@@ -34,7 +34,7 @@ Padding(
                                            Navigator.of(context).pop();
                                           }, widget: const Icon(Icons.keyboard_arrow_left, color: AppColor.darkgrey,size: 30), radius: 15, height: 45, width: 45, 
                                           buttonColor: AppColor.white),
-                                          SizedBox( width: 22,),
+                                          const SizedBox( width: 22,),
 
                                           appText(text: 'Request', fontSize: 24, fontweight: FontWeight.w700, textColor: AppColor.textBlack),     
                                 ],
@@ -44,25 +44,25 @@ Padding(
             SizedBox(
               height: SizeConfig.heightMultiplier * 88.23,
               child: ListView(
-              padding: EdgeInsets.only(top: 38),
+              padding: const EdgeInsets.only(top: 38),
                 
                   children: [
                         Row(
                         children: [
                           Expanded(
                             child: Container(
-                              color: Color(0xffC2C3CB),
+                              color: const Color(0xffC2C3CB),
                               height: 1,
                             ),
                           ),
-                          SizedBox(width: 4.5,),
+                          const SizedBox(width: 4.5,),
                         appText(text: date!, fontSize: 20, fontweight: FontWeight.w400,textAlign: TextAlign.start, textColor: AppColor.textBlack.withOpacity(0.6)),
-                        SizedBox(
+                        const SizedBox(
                           width: 4.5,
                         ),
                         Expanded(
                           child: Container(
-                              color: Color(0xffC2C3CB),
+                              color: const Color(0xffC2C3CB),
                               height: 1,
                             ),
                         ),

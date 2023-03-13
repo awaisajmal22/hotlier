@@ -21,19 +21,19 @@ class FavoriteView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: ListView(
+        child: Column(
           children: [
             Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 35),
                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
-                                      check == false? SizedBox(width: 45,) : appButton(
+                                      check == false? const SizedBox(width: 45,) : appButton(
                                             onTap: (){
                                              Navigator.of(context).pop();
                                             }, widget: const Icon(Icons.keyboard_arrow_left, color: AppColor.darkgrey,size: 30), radius: 15, height: 45, width: 45, 
                                             buttonColor: AppColor.white),
-                                            SizedBox( width: 22,),
+                                            const SizedBox( width: 22,),
       
                                             appText(text: 'Favorites', fontSize: 24, fontweight: FontWeight.w700, textColor: AppColor.textBlack),     
                                   ],
@@ -43,14 +43,14 @@ class FavoriteView extends StatelessWidget {
                 height: SizeConfig.heightMultiplier * 1,
               ),
               SizedBox(
-                height: SizeConfig.heightMultiplier * 82.378,
+                height:check == false ? SizeConfig.heightMultiplier * 82.25 : SizeConfig.heightMultiplier * 80.25,
                 child: ListView(
-                  padding: EdgeInsets.only(top: 50),
+                  padding: const EdgeInsets.only(top: 50),
                   children: [
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 23),
-                      child: appText(text: 'Favorites product'.toUpperCase(), fontSize: 12, fontweight: FontWeight.w700, textColor: Color(0xff171717).withOpacity(0.4)),
-                    ),SizedBox(
+                      child: appText(text: 'Favorites product'.toUpperCase(), fontSize: 12, fontweight: FontWeight.w700, textColor: const Color(0xff171717).withOpacity(0.4)),
+                    ),const SizedBox(
                       height: 18,
                     ),
                     SizedBox(
@@ -58,7 +58,7 @@ class FavoriteView extends StatelessWidget {
                       child: Obx(
                         ()=> ListView.builder(
                           itemCount: favoriteVM.favoriteproductList.length,
-                          padding: EdgeInsets.symmetric(horizontal: 15.5),
+                          padding: const EdgeInsets.symmetric(horizontal: 15.5),
                         scrollDirection: Axis.horizontal,
                           itemBuilder: (context, index){
                           return favoriteProductTile(
@@ -72,20 +72,20 @@ class FavoriteView extends StatelessWidget {
                         }),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                      Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 23),
-                      child: appText(text: 'Favorites Designer’s'.toUpperCase(), fontSize: 12, fontweight: FontWeight.w700, textColor: Color(0xff171717).withOpacity(0.4)),
-                    ),SizedBox(
+                      child: appText(text: 'Favorites Designer’s'.toUpperCase(), fontSize: 12, fontweight: FontWeight.w700, textColor: const Color(0xff171717).withOpacity(0.4)),
+                    ),const SizedBox(
                       height: 18,
                     ),
                     SizedBox(
                       height: 210,
                       child: ListView.builder(
                         itemCount: 6,
-                        padding: EdgeInsets.symmetric(horizontal: 15.5),
+                        padding: const EdgeInsets.symmetric(horizontal: 15.5),
                       scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index){
                         return favoriteDesignerTile(
@@ -95,14 +95,14 @@ class FavoriteView extends StatelessWidget {
                         );
                       }),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 23,
                     ),
                      Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 23),
-                      child: appText(text: 'Favorites Brands'.toUpperCase(), fontSize: 12, fontweight: FontWeight.w700, textColor: Color(0xff171717).withOpacity(0.4)),
+                      child: appText(text: 'Favorites Brands'.toUpperCase(), fontSize: 12, fontweight: FontWeight.w700, textColor: const Color(0xff171717).withOpacity(0.4)),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height:  18,
                     ),
                      SizedBox(
@@ -110,7 +110,7 @@ class FavoriteView extends StatelessWidget {
                       child: ListView.builder(
                       
                         itemCount: 6,
-                        padding: check== true ? EdgeInsets.only(left: 15.5, right: 15.5, bottom: 10) :  EdgeInsets.symmetric(horizontal: 15.5),
+                        padding: check== true ? const EdgeInsets.only(left: 15.5, right: 15.5, bottom: 10) :  const EdgeInsets.symmetric(horizontal: 15.5),
                       scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index){
                         return favoriteBrandsTile(
@@ -120,7 +120,7 @@ class FavoriteView extends StatelessWidget {
                         );
                       }),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     )
 

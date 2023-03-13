@@ -32,12 +32,12 @@ class DetailView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomSheet: MediaQuery.of(context).viewInsets.bottom !=0? null :Container(
-        padding: EdgeInsets.symmetric( horizontal: 22, vertical: 10),
+        padding: const EdgeInsets.symmetric( horizontal: 22, vertical: 10),
         height: SizeConfig.heightMultiplier * 10,
         width: SizeConfig.widthMultiplier * 100,
         child: appButton(onTap: (){
           Get.to(CreateOrSelectProjectView( check:  0,));
-        }, widget: appText(text: 'Add to inquiry Cart', fontSize: 16, fontweight: FontWeight.w400, textColor: Color(0xffF3F5F6),), 
+        }, widget: appText(text: 'Add to inquiry Cart', fontSize: 16, fontweight: FontWeight.w400, textColor: const Color(0xffF3F5F6),), 
         height:  SizeConfig.heightMultiplier * 10,
         width: SizeConfig.widthMultiplier * 100,
          buttonColor: AppColor.cyan
@@ -47,12 +47,10 @@ class DetailView extends StatelessWidget {
       //   height: SizeConfig.heightMultiplier * 20,
       //   color: Colors.red,
       // ),
-      backgroundColor: Color(0xffF3F6F8),
+      backgroundColor: const Color(0xffF3F6F8),
       body: SafeArea(
-        child: ListView(
-          padding: EdgeInsets.only(
-            bottom: 60
-          ),
+        child: Column(
+          
           children: [
                   titleTile(
                     context, 
@@ -61,57 +59,66 @@ class DetailView extends StatelessWidget {
                     description: "Brazil"
                     ),
                  
-            SizedBox(
+            const SizedBox(
               height: 18,
             ),
-         detailStackImageTile(detailVM: detailVM),
-         SizedBox(
-          height: 16,
-         ),
          
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 22),
-            child: Container(
-              height: SizeConfig.heightMultiplier * 30,
+         
+          Expanded(
+            child: SizedBox(
+              
+              height: SizeConfig.heightMultiplier * 75,
               child: ListView(
                 children: [
-         colorsTile(detailVM: detailVM),
-SizedBox(
-  height: 18,
-),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-dimentionTile(detailVM: detailVM, context: context),
-                  SizedBox(width: 10,),
-                  materialTile(detailVM: detailVM)
-
-                    ],
+                  detailStackImageTile(detailVM: detailVM),
+                   const SizedBox(
+            height: 16,
+                   ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 22),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                         colorsTile(detailVM: detailVM),
+                            const SizedBox(
+                              height: 18,
+                            ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            dimentionTile(detailVM: detailVM, context: context),
+                        const SizedBox(width: 10,),
+                        materialTile(detailVM: detailVM)
+                            
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 18,
+                        ),
+                        appText(text: 'Description', fontSize: 18, fontweight: FontWeight.w500, textColor: AppColor.darkgrey),
+                        const SizedBox(
+                          height: 2,
+                        ),
+                       descriptionTile(
+                        detailVM: detailVM,
+                        lessText: 'This armchair is an elegant and functional piece of furniture. It is suitable for family visits and parties with ',
+                        moreText: 'This armchair is an elegant and functional piece of furniture. It is suitable for family visits and parties with friends and perfect for relaxing in front of the TV after hard work. ' ,
+                       ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        const SizedBox(
+                          height: 2,
+                        ),
+                        appText(text: 'Customization instruction', fontSize: 18, fontweight: FontWeight.w500, textColor: AppColor.darkgrey),
+                            
+                    customizationTile(),
+                            const SizedBox(
+                              height: 30,
+                            )
+                      ],
+                    ),
                   ),
-                  SizedBox(
-                    height: 18,
-                  ),
-                  appText(text: 'Description', fontSize: 18, fontweight: FontWeight.w500, textColor: AppColor.darkgrey),
-                  SizedBox(
-                    height: 2,
-                  ),
-                 descriptionTile(
-                  detailVM: detailVM,
-                  lessText: 'This armchair is an elegant and functional piece of furniture. It is suitable for family visits and parties with ',
-                  moreText: 'This armchair is an elegant and functional piece of furniture. It is suitable for family visits and parties with friends and perfect for relaxing in front of the TV after hard work. ' ,
-                 ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  SizedBox(
-                    height: 2,
-                  ),
-                  appText(text: 'Customization instruction', fontSize: 18, fontweight: FontWeight.w500, textColor: AppColor.darkgrey),
-
-              customizationTile(),
-SizedBox(
-  height: 30,
-)
                 ],
               ),
             ),
