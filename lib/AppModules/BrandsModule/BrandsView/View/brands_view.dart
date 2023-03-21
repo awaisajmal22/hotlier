@@ -19,6 +19,7 @@ class BrandsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: AppColor.white,
       body: SafeArea(
           child: Column(

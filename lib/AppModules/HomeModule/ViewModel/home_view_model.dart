@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hotlier/AppModules/HomeModule/Services/home_services.dart';
@@ -6,8 +8,8 @@ class HomeViewModel extends GetxController{
   final controller = PageController();
   RxInt productListIndex = (-1).obs;
   RxInt professionalListIndex = (-1).obs;
-  RxInt carouselIndex = 1.obs;
-
+  RxInt carouselIndex = 0.obs;
+  
   @override
  Future<void> onInit() async {
     // TODO: implement onInit
@@ -17,8 +19,8 @@ class HomeViewModel extends GetxController{
   }
   List images = [
     'https://images.pexels.com/photos/14005887/pexels-photo-14005887.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
-    'https://images.pexels.com/photos/14005887/pexels-photo-14005887.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
-    'https://images.pexels.com/photos/14005887/pexels-photo-14005887.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
+    'https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg',
+    'https://cdn.pixabay.com/photo/2023/03/11/15/28/building-7844703__340.jpg',
 
    
   ];

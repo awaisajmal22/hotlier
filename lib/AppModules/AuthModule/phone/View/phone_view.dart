@@ -17,7 +17,6 @@ import 'package:hotlier/common/app_Text.dart';
 import 'package:hotlier/common/app_color.dart';
 import 'package:hotlier/common/loadingIndicator.dart';
 import 'package:hotlier/common/size_config.dart';
-import 'package:intl_phone_field/phone_number.dart';
 
 import '../../../../common/app_button.dart';
 import 'component/phone_text_formfield.dart';
@@ -26,7 +25,7 @@ class PhoneView extends StatelessWidget {
 
   final _formKey = GlobalKey<FormState>();
   final verificationVM = Get.put(SignUpViewModel());
-
+  final phoneController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,54 +56,27 @@ class PhoneView extends StatelessWidget {
               // height: 49.9,
               height: SizeConfig.heightMultiplier * 5.49,
             ),
-            // phoneTextFormField(
-            //   onChanged: (phone){
-               
-            // verificationVM.userCountryCode.value = phone!.countryCode;
-            //   },
-              
-            //   keyboardType: TextInputType.number,
-            //   hintText: 'Phone Number',
-            
-            //   controller: verificationVM.phoneController,
-              
-            //   context: context,
-            //   prefixicon: null
-            // //   // prefixicon: CountryCodePicker(
-            // //   //       onChanged: verificationVM.onChange,
-            // //   //       showFlagDialog: true,
-            // //   //       showFlag: true,
-            // //   //       textStyle: TextStyle(
-            // //   //         color: AppColor.lightgrey
-            // //   //       ),
-            // //   //       initialSelection: verificationVM.userCountryCode.value,
-            // //   //       favorite: ['+92', 'PK'],
-                    
-            // //   //       alignLeft: false,
-            // //   //     ),
-            // ),
+           
            Obx(
              ()=> phoneTextFormField(
-                                  
-                                  validation: (value){
-                                    if(value!.isEmpty){
-                                      return "Please Enter Your Phone Number";
-           
-                                    } else if(verificationVM.phoneController.text.length < 7){
-                                      return "Please Enter Valid Phone Number";
-                                    }
+              validateCheck: verificationVM.phoneCheck.value,
+              validator: (value){
+        if(value!.isEmpty){
+          verificationVM.phoneCheck.value = true;
+          return "Please Enter Your Phone Number";
+        } else {
+          verificationVM.phoneCheck.value = false;
+        }
+        return null;
+      },
+                                  onChanged: (value){
+                                    verificationVM.userCountryCode.value = value!.dialCode.toString();
                                   },
+                                 
                                   keyboardType: TextInputType.phone,
                                 countryCode: verificationVM.userCountryCode.value,
                                   context: context, 
-                                  onSelect: (value){
-                                   verificationVM.userCountryCode.value = value!.phoneCode;
-                                  },
-                                                           //  onChanged: (phone){
-                                                           //   forgetPasswordVM.countryCode.value = phone!.countryCode;
-                                                           //   print(forgetPasswordVM.countryCode.value);
-                                                           //  }, 
-                                 controller: verificationVM.phoneController, 
+                                 controller: phoneController, 
                                  hintText: 'Enter Phone Number', 
                                  ),
            ),
@@ -140,7 +112,7 @@ class PhoneView extends StatelessWidget {
                                       
                                         time: verificationVM.time.value,
                                         title: 'Phone Number',
-                                        subtitle: '+${verificationVM.userCountryCode.value} ${verificationVM.phoneController.text}',
+                                        subtitle: '${verificationVM.userCountryCode.value} ${phoneController.text}',
                                       ),
                                     ) 
                                   );

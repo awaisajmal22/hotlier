@@ -12,8 +12,10 @@ try{
     'password': password
   };
   var responce = await API().postRequest(ApiUrl.loginUrl, data);
+  print(ApiUrl.loginUrl);
+  print(responce);
   if(responce == null){
-    
+    print('error is there');
   }else if(responce.data['success'] == true){
     GetStorageHandler storageHandler = GetStorageHandler();
     isSuccess = responce.data['success'];
@@ -24,6 +26,7 @@ try{
     ShowMessage().showErrorMessage(responce.data['message'].toString());
   }
 }catch (e){
-  return isSuccess;
+  
 }
+return isSuccess;
 }

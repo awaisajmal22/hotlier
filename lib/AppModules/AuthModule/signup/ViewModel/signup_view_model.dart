@@ -1,16 +1,19 @@
 import 'dart:async';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:hotlier/AppModules/AuthModule/signup/Model/signup_model.dart';
 import 'package:hotlier/AppModules/AuthModule/signup/Services/signup_services.dart';
 import 'package:hotlier/AppModules/BottomNavBarModule/presistent_tab_items.dart';
 import 'package:hotlier/common/loadingIndicator.dart';
 import 'package:hotlier/common/toast.dart';
 
 class SignUpViewModel extends GetxController{
+RxBool phoneCheck = false.obs;
 final formKey = GlobalKey<FormState>();
 final emailRegex = RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
   final passwordRegex = RegExp(r"(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)");
@@ -143,7 +146,41 @@ Future<UserCredential> signinWithFacebook(BuildContext context) async {
     }
     hideOpenDialog(context: context);
   }
-  var email = data['email'];
   return FirebaseAuth.instance.signInWithCredential(fbAuthCredential);
+}
+
+FirebaseFirestore db = FirebaseFirestore.instance;
+final auth = FirebaseAuth.instance;
+
+createUser({required String userType}) async {  
+  
+   try{
+  await auth.createUserWithEmailAndPassword(email: email.text, password: password.text)
+  .then((value) async {
+    
+ addUser(userType: userType);
+  });
+ 
+ 
+   } catch(e){
+    print(e);
+   }
+
+}
+Future addUser({required String userType}) async {
+  User? user = FirebaseAuth.instance.currentUser;
+    SignUpModel signUpModel = SignUpModel();
+   signUpModel.email = user!.email;
+   signUpModel.uid = user.uid;
+   signUpModel.name = name.text;
+   signUpModel.type = userType;
+   signUpModel.password = password.text;
+   signUpModel.username = username.text;
+   await db.collection('Users').doc(user.uid).set(signUpModel.toMap()).whenComplete(() => 
+  ShowMessage()
+  .showMessage('Success'))
+  .catchError((e,x){
+    ShowMessage().showErrorMessage(e.toString());
+  });
 }
 }

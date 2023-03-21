@@ -4,8 +4,10 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:hotlier/AppModules/AuthModule/login/View/login_view.dart';
 import 'package:hotlier/AppModules/AuthModule/phone/View/phone_view.dart';
+import 'package:hotlier/AppModules/AuthModule/signup/Model/signup_model.dart';
 import 'package:hotlier/AppModules/AuthModule/signup/View/component/select_type_tile.dart';
 import 'package:hotlier/AppModules/AuthModule/signup/ViewModel/signup_view_model.dart';
+import 'package:hotlier/AppModules/BottomNavBarModule/presistent_tab_items.dart';
 
 import '../../../../common/app_Text.dart';
 import '../../../../common/app_button.dart';
@@ -167,8 +169,10 @@ String userType;
                 ),
                 appButton(onTap: (){
                   if(signupVM.formKey.currentState!.validate()){
+
+                    signupVM.createUser(userType: userType);
                     
-                    Get.to( PhoneView(
+                    Get.to( PresistentBottomBarItems(
             
                 
                     ));

@@ -47,12 +47,13 @@ class ExploreView2 extends StatelessWidget {
               const SizedBox(
                 height: 16,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 19),
-                child: Column(
+              Expanded(
+                child: ListView(
+                  padding: const EdgeInsets.symmetric(horizontal: 19),
+                  physics: NeverScrollableScrollPhysics(),
                   children: [
                     Row(
-    
+                  
                       children: [
                         searchTile(
                           context,
@@ -92,14 +93,14 @@ class ExploreView2 extends StatelessWidget {
                               ),
                             ),
                        ),
-      
-      
+                    
+                    
                       ],
                     ),
                     const SizedBox(
                       height: 17,
                     ),
-               Obx(
+                 Obx(
                 ()=> SizedBox(
                   width: SizeConfig.widthMultiplier * 100,
                   height: SizeConfig.heightMultiplier * 70.7,
@@ -147,11 +148,11 @@ class ExploreView2 extends StatelessWidget {
                         );
                       })
                     ),
-               )
-            
-            ],
-          )
-          ),
+                 )
+                          
+                          ],
+                        ),
+              ),
             ]
       )
         )

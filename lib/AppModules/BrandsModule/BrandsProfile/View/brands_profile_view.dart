@@ -105,7 +105,7 @@ class BrandsProfileView extends StatelessWidget {
                       onTap: (){
                
                       },
-                      child: appText(text: 'See All', textColor: AppColor.cyan, fontSize: 13, fontweight: FontWeight.w700)),
+                      child: appText(text: 'See All', textColor: AppColor.cyan, fontSize: SizeConfig.textMultiplier * 1.6, fontweight: FontWeight.w700)),
                   ],
                  ),
                   ],

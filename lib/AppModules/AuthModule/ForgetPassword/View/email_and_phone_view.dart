@@ -8,7 +8,6 @@ import 'package:hotlier/AppModules/AuthModule/ForgetPassword/View/Component/dail
 import 'package:hotlier/AppModules/AuthModule/phone/View/component/phone_text_formfield.dart';
 import 'package:hotlier/AppModules/AuthModule/ForgetPassword/ViewModel/forget_password_view_model.dart';
 import 'package:hotlier/common/TextField/text_field.dart';
-import 'package:intl_phone_field/countries.dart';
 
 import '../../../../common/app_Text.dart';
 import '../../../../common/app_button.dart';
@@ -21,6 +20,7 @@ class EmailandPhoneView extends StatelessWidget {
   EmailandPhoneView({super.key, required this.index});
   int index;
   final forgetPasswordVM = Get.put(ForgetPasswordViewModel());
+  final phoneController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -63,26 +63,24 @@ class EmailandPhoneView extends StatelessWidget {
                               controller: forgetPasswordVM.forgetPasswordEmailController, 
                              hintText: 'Email') : Obx(
                               ()=> phoneTextFormField(
-                                
-                                validation: (value){
-                                  if(value!.isEmpty){
-                                    return "Please Enter Your Phone Number";
-
-                                  } else if(forgetPasswordVM.forgetPasswordPhoneController.text.length < 7){
-                                    return "Please Enter Valid Phone Number";
-                                  }
+                                validateCheck: forgetPasswordVM.phoneCheck.value,
+              validator: (value){
+        if(value!.isEmpty){
+          forgetPasswordVM.phoneCheck.value = true;
+          return "Please Enter Your Phone Number";
+        }
+        else {
+          forgetPasswordVM.phoneCheck.value = false;
+        }
+        return null;
+      },
+                                onChanged: (value){
+                                  forgetPasswordVM.countryCode.value = value!.dialCode.toString();
                                 },
                                 keyboardType: TextInputType.phone,
                               countryCode: forgetPasswordVM.countryCode.value,
                                 context: context, 
-                                onSelect: (value){
-                                  forgetPasswordVM.countryCode.value = value!.phoneCode;
-                                },
-                                                         //  onChanged: (phone){
-                                                         //   forgetPasswordVM.countryCode.value = phone!.countryCode;
-                                                         //   print(forgetPasswordVM.countryCode.value);
-                                                         //  }, 
-                               controller: forgetPasswordVM.forgetPasswordPhoneController, 
+                               controller: phoneController, 
                                hintText: 'Enter Phone Number', ),
                              ),
                              
@@ -111,7 +109,7 @@ class EmailandPhoneView extends StatelessWidget {
                                         ()=> ForgetPasswordDailog(
                                           time: forgetPasswordVM.time.value,
                                           title: forgetPasswordVM.forgetList[1].title,
-                                          subtitle:'+${forgetPasswordVM.countryCode.value}${forgetPasswordVM.forgetPasswordPhoneController.text}',
+                                          subtitle:'${forgetPasswordVM.countryCode.value}${phoneController.text}',
                                         ),
                                       ),
                                     
@@ -137,7 +135,8 @@ class EmailandPhoneView extends StatelessWidget {
                ),
                appButton(
                 onTap: (){
-                  print(forgetPasswordVM.countryCode.value);
+                  print(phoneController.text);
+                  // print(forgetPasswordVM.countryCode.value);
               // if(_formKey.currentState!.validate()){
               //   print('success');
               // }

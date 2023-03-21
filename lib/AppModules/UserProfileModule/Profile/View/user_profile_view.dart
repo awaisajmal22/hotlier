@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
+import 'package:hotlier/AppModules/AuthModule/login/View/login_view.dart';
+import 'package:hotlier/AppModules/AuthModule/login/ViewModel/login_view_model.dart';
 import 'package:hotlier/AppModules/FavoriteModule/View/favorite_view.dart';
 import 'package:hotlier/AppModules/SettingModule/Setting/View/settings_view.dart';
 import 'package:hotlier/AppModules/UserProfileModule/About/View/about_view.dart';
@@ -20,6 +22,7 @@ import 'component/user_profile_tile.dart';
 class UserProfileView extends StatelessWidget {
    UserProfileView({super.key, required this.check});
   final userProfileVM = Get.put(UserProfileViewModel());
+  final loginVM = Get.put(LoginViewModel());
   bool? check;
 
   @override
@@ -157,7 +160,10 @@ class UserProfileView extends StatelessWidget {
                       Get.to(const AboutView());
                     }
                     else if(userProfileVM.selectedIndex.value == 6){
-                      logoutDailog(context);
+                      logoutDailog(context, (){
+                        loginVM.signOut();
+                        Get.offAll(LoginView());
+                      });
                     }
                   },
                    title: userProfileVM.profileTileList[index].title

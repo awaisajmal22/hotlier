@@ -13,6 +13,7 @@ Widget brandsGridTile(BuildContext context, {required BrandsViewModel brandsVM, 
         margin: const EdgeInsets.symmetric( horizontal:  5,),
     height: SizeConfig.heightMultiplier * 64.94,
     child: brandsVM.check.value == false ?  GridView.builder(
+      padding: EdgeInsets.only(bottom: 10),
                           shrinkWrap: true,
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(

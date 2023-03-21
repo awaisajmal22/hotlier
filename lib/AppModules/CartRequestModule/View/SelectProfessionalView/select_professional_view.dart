@@ -20,16 +20,17 @@ class SelectProfessionalView extends StatelessWidget {
 final yourProjectVM = Get.put(ProfessionalsProjectRequestViewModel());
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColor.whiteF5,
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-          children: [
-            Container(
-              color: AppColor.whiteF5,
-              child: Column(
+    return GestureDetector(
+      onTap: (){
+        FocusManager.instance.primaryFocus!.unfocus();
+      },
+      child: Scaffold(
+        body: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+            children: [
+              Column(
                 children: [
                    Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -57,50 +58,52 @@ final yourProjectVM = Get.put(ProfessionalsProjectRequestViewModel());
               ),
                 ],
               ),
-            ),
-              SizedBox(
-                height: SizeConfig.heightMultiplier * 74.3,
-                
-                child: ListView.builder(
-                  itemCount: yourProjectVM.selectProfessionalsList.length,
-                  itemBuilder: (context, index){
-                  return Column(
-                    children: [
-                      Obx(
-                        ()=> selectProfessionalsTile(
-
-                          check: yourProjectVM.selectProfessionalsList[index].check.value,
-                          width: SizeConfig.widthMultiplier * 100,
-                          margin: 0,
-                          name: yourProjectVM.selectProfessionalsList[index].name, 
-                          description: yourProjectVM.selectProfessionalsList[index].description, 
-                          url: yourProjectVM.selectProfessionalsList[index].imageUrl,
-                      
-                            onTap: (){
-                              print(yourProjectVM.selectProfessionalsList[index].check.value);
-                              if(yourProjectVM.selectProfessionalsList[index].check.value == true ) {
-                           
-                                yourProjectVM.professionals.remove(yourProjectVM.selectProfessionalsList[index]);
-                              }
-                              else {
-
-                                yourProjectVM.professionals.add(yourProjectVM.selectProfessionalsList[index]);
-                              }
-                            yourProjectVM.selectProfessionalsList[index].check.value = !yourProjectVM.selectProfessionalsList[index].check.value ;
-                              
-                            },
+                Expanded(
+                  child: SizedBox(
+                    // height: SizeConfig.heightMultiplier * 74.3,
+                    
+                    child: ListView.builder(
+                      itemCount: yourProjectVM.selectProfessionalsList.length,
+                      itemBuilder: (context, index){
+                      return Column(
+                        children: [
+                          Obx(
+                            ()=> selectProfessionalsTile(
+                    
+                              check: yourProjectVM.selectProfessionalsList[index].check.value,
+                              width: SizeConfig.widthMultiplier * 100,
+                              margin: 0,
+                              name: yourProjectVM.selectProfessionalsList[index].name, 
+                              description: yourProjectVM.selectProfessionalsList[index].description, 
+                              url: yourProjectVM.selectProfessionalsList[index].imageUrl,
+                          
+                                onTap: (){
+                                  print(yourProjectVM.selectProfessionalsList[index].check.value);
+                                  if(yourProjectVM.selectProfessionalsList[index].check.value == true ) {
+                               
+                                    yourProjectVM.professionals.remove(yourProjectVM.selectProfessionalsList[index]);
+                                  }
+                                  else {
+                    
+                                    yourProjectVM.professionals.add(yourProjectVM.selectProfessionalsList[index]);
+                                  }
+                                yourProjectVM.selectProfessionalsList[index].check.value = !yourProjectVM.selectProfessionalsList[index].check.value ;
+                                  
+                                },
+                              ),
                           ),
-                      ),
-                      const SizedBox(
-                        height: 15,
-                      )
-                    ],
-                  );
-                }),
-              )
-          ],
+                          const SizedBox(
+                            height: 15,
+                          )
+                        ],
+                      );
+                    }),
+                  ),
+                )
+            ],
+        ),
+          )),
       ),
-        )),
     );
   }
 }

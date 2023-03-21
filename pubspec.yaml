@@ -48,8 +48,6 @@ dependencies:
   gallery_saver: ^2.3.2
   # country_code_picker: ^2.0.2
   motion_toast: ^2.6.5
-  intl_phone_field: ^3.0.0
-  http: ^0.13.5
   intl_phone_number_input: ^0.7.2
   country_picker: ^2.0.2
   dio: ^5.0.1

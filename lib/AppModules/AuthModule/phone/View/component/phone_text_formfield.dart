@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hotlier/common/app_Text.dart';
 import 'package:hotlier/common/app_color.dart';
-import 'package:intl_phone_field/intl_phone_field.dart';
-import 'package:intl_phone_field/phone_number.dart';
+import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 Widget phoneTextFormField(
   {
+    required bool validateCheck,
     required BuildContext context,
    required String countryCode,
     double radius =12.84,
@@ -19,14 +19,14 @@ Widget phoneTextFormField(
     TextInputType keyboardType = TextInputType.text,
     TextInputAction textInputAction = TextInputAction.next,
     required String hintText,
-    Function(Country?)? onSelect,
-    // Function(PhoneNumber?)? onChanged,
-    Function(String?)? validation,
+    Function(String?)? validator,
+    Function(PhoneNumber?)? onChanged,
   }
 ){
   return Container(
+    padding: const EdgeInsets.symmetric(horizontal:10 ,vertical: 0),
     decoration: BoxDecoration(
-      
+      color: AppColor.white,
       boxShadow: [
       BoxShadow(
         color: AppColor.shadowColor.withOpacity(0.15),
@@ -38,157 +38,119 @@ Widget phoneTextFormField(
       borderRadius: BorderRadius.circular(radius)
     ),
     
-    
-    // child: IntlPhoneField(
-    //   autovalidateMode: AutovalidateMode.onUserInteraction,
-    
-    //   validator: (val){
-
-    //     if(val!.completeNumber.isEmpty){
-    //       return 'Please Enter Phone';
-    //     }else if(val.completeNumber.length < 11){
-    //       return 'Please Enter Valid Number';
-    //     }
-        
-    //     return null;
-    //   },
-    //   onCountryChanged: (value){
-
-    //   },
-    //   initialValue: 'PK',
-
-    //   initialCountryCode: 'PK',
-    //   onChanged: onChanged as PhoneNumber? Function(PhoneNumber?),
-      
-    //   flagsButtonPadding: const EdgeInsets.only(left: 20, top: 22 , bottom: 22),
-      
-    //   dropdownTextStyle: const TextStyle(
-    //     fontSize: 14, 
-    //       fontWeight: FontWeight.w600,
-    //       color: AppColor.lightgrey,
-    //       fontFamily: 'SF Pro Display'
-        
-    //     ),
-    //   disableLengthCheck: true,
-    //   controller: controller,
-    //   showDropdownIcon: false,
-    //   style: const TextStyle(
-    //     fontSize: 14, 
-    //       fontWeight: FontWeight.w600,
-    //       fontFamily: 'SF Pro Display',
-    //     color:  AppColor.lightgrey
-    //   ),
-    //   decoration: InputDecoration(
-        
-    //     hintText: hintText,
-    //     hintStyle: const TextStyle(
-    //       fontSize: 14, 
-    //       fontWeight: FontWeight.w600,
-    //       color: AppColor.lightgrey,
-    //       fontFamily: 'SF Pro Display'
-        
-    //     ),
-    //     contentPadding: const EdgeInsets.only(top: 22, bottom: 22, right: 20),
-    //     border: OutlineInputBorder(
-    //       borderSide: const BorderSide(
-    //         color: Colors.transparent
-    //       ),
-    //       borderRadius: BorderRadius.circular(radius),
-        
-    //     ),
-    //     enabledBorder: OutlineInputBorder(
-    //       borderSide: const BorderSide(
-    //         color: Colors.transparent
-    //       ),
-    //       borderRadius: BorderRadius.circular(radius),
-        
-    //     ),
-    //     fillColor: AppColor.white,
-    //     filled: true,
-    //     focusedBorder: OutlineInputBorder(
-          
-    //       borderRadius: BorderRadius.circular(radius),
-    //       borderSide: const BorderSide(
-    //         width: 1,
-    //         color: AppColor.cyan
-    //       )
-    //     )
-        
-    //   ),
-    // )
-    child: TextFormField(
-    
-      validator: validation as String? Function(String?),
-      textInputAction: textInputAction,
-      keyboardType: keyboardType,
-      controller: controller,
-      // validator: validation as String? Function(String?),
-      autofocus: false,
-      obscureText: obsecure,
-      cursorColor: AppColor.cyan,
-      style: const TextStyle(
-        fontSize: 12,
-        fontFamily: 'SF Pro Display',
-        color:  AppColor.lightgrey
+    child: InternationalPhoneNumberInput(
+      hintText: hintText,
+      onSaved: (number){},
+      textAlignVertical: TextAlignVertical.center,
+      textStyle: const TextStyle(
+        fontSize: 14, fontWeight: FontWeight.w500,
+        fontFamily: 'DS Pro Display',
+        color: AppColor.lightgrey
       ),
-      decoration: InputDecoration(
-        
-        contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 22),
-
-        hintText: hintText,
-        hintStyle: const TextStyle(
-          color: AppColor.lightgrey,
-        fontSize: 12,
-        fontFamily: 'SF Pro Display',
-        ),
-        suffixIcon: suffixIcon,
-      focusColor: AppColor.cyan,
-        prefixIcon: Container(
-          alignment: Alignment.center,
-          width: 60,
-          height: 60,
-          child: GestureDetector(
-            onTap: (){
-              showCountryPicker(
-            
-            context: context,
-            useSafeArea: true,
-            showPhoneCode: true,
-            onSelect: onSelect as Country? Function(Country?)
-            );
-            },
-            child:appText(text: '+${countryCode}', textColor: AppColor.lightgrey, fontSize: 12)
-          ),
-          
-        ),
-        filled: true,
+      textFieldController: controller,
+      validator: validator as String? Function(String?),
+      onInputValidated: (value){  
+       
+      },
+      ignoreBlank: true,
+      selectorTextStyle: const TextStyle(
+        color: AppColor.lightgrey
+      ),
+      selectorConfig: const SelectorConfig(
+      
+       leadingPadding: 10,
+       trailingSpace: false,
+       showFlags: true,
+       selectorType: PhoneInputSelectorType.BOTTOM_SHEET
+      ),
+      onInputChanged: onChanged as PhoneNumber?  Function(PhoneNumber)?,
+      inputBorder: InputBorder.none,
+      inputDecoration:  InputDecoration(
+        contentPadding: EdgeInsets.symmetric(horizontal: 0, vertical: validateCheck == true ? 5 : 22.9),
         fillColor: AppColor.white,
-        enabled: true,
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(radius),
-        borderSide: const BorderSide(
-          color: AppColor.cyan
-        ) 
-        ),
-       border: OutlineInputBorder(
-        borderSide: const BorderSide(
-          color: AppColor.transparent
-        ),
-        borderRadius: BorderRadius.circular(radius)
-       ),
-       enabledBorder:   OutlineInputBorder(
-        borderSide: const BorderSide(
-          color: AppColor.transparent
-        ),
-        borderRadius: BorderRadius.circular(radius)
-       ),
-       errorBorder: OutlineInputBorder(
-        borderSide: const BorderSide(
-          color: AppColor.transparent
-        ),
-        borderRadius: BorderRadius.circular(radius)
-       ),
-    ),
-  )
+        filled: true,
+        disabledBorder: InputBorder.none,
+        border: InputBorder.none,
+        focusedBorder: InputBorder.none,
+        enabledBorder: InputBorder.none,
+        errorBorder: InputBorder.none,
+     focusedErrorBorder: InputBorder.none,
+        )
+      ),
+    
+  // TextFormField(
+    
+  //     validator: validation as String? Function(String?),
+  //     textInputAction: textInputAction,
+  //     keyboardType: keyboardType,
+  //     controller: controller,
+  //     // validator: validation as String? Function(String?),
+  //     autofocus: false,
+  //     obscureText: obsecure,
+  //     cursorColor: AppColor.cyan,
+  //     style: const TextStyle(
+  //       fontSize: 12,
+  //       fontFamily: 'SF Pro Display',
+  //       color:  AppColor.lightgrey
+  //     ),
+  //     decoration: InputDecoration(
+        
+  //       contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 22),
+
+  //       hintText: hintText,
+  //       hintStyle: const TextStyle(
+  //         color: AppColor.lightgrey,
+  //       fontSize: 12,
+  //       fontFamily: 'SF Pro Display',
+  //       ),
+  //       suffixIcon: suffixIcon,
+  //     focusColor: AppColor.cyan,
+  //       prefixIcon: Container(
+  //         alignment: Alignment.center,
+  //         width: 60,
+  //         height: 60,
+  //         child: GestureDetector(
+  //           onTap: (){
+  //             showCountryPicker(
+            
+  //           context: context,
+  //           useSafeArea: true,
+  //           showPhoneCode: true,
+  //           onSelect: onSelect as Country? Function(Country?)
+  //           );
+  //           },
+  //           child:appText(text: '+${countryCode}', textColor: AppColor.lightgrey, fontSize: 12)
+  //         ),
+          
+  //       ),
+  //       filled: true,
+  //       fillColor: AppColor.white,
+  //       enabled: true,
+  //       focusedBorder: OutlineInputBorder(
+  //         borderRadius: BorderRadius.circular(radius),
+  //       borderSide: const BorderSide(
+  //         color: AppColor.cyan
+  //       ) 
+  //       ),
+  //      border: OutlineInputBorder(
+  //       borderSide: const BorderSide(
+  //         color: AppColor.transparent
+  //       ),
+  //       borderRadius: BorderRadius.circular(radius)
+  //      ),
+  //      enabledBorder:   OutlineInputBorder(
+  //       borderSide: const BorderSide(
+  //         color: AppColor.transparent
+  //       ),
+  //       borderRadius: BorderRadius.circular(radius)
+  //      ),
+  //      errorBorder: OutlineInputBorder(
+  //       borderSide: const BorderSide(
+  //         color: AppColor.transparent
+  //       ),
+  //       borderRadius: BorderRadius.circular(radius)
+  //      ),
+  //   ),
+  // )
   );
 }

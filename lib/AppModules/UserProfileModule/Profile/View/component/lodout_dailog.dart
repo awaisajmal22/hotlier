@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -7,7 +8,8 @@ import 'package:hotlier/common/app_button.dart';
 import 'package:hotlier/common/app_color.dart';
 
 logoutDailog(
-  BuildContext context
+  BuildContext context,
+  VoidCallback yes
 ){
   showDialog(context: context, builder: (context){
     return AlertDialog(
@@ -26,9 +28,7 @@ logoutDailog(
           child: appText(text: 'No', textColor: AppColor.textBlack, fontSize: 15),
         ),
         TextButton(
-         onPressed: (){
-            Get.offAll(LoginView());
-          },
+         onPressed: yes,
           child: appText(text: 'Yes', textColor: AppColor.textBlack, fontSize:  15),
         ),
       ],

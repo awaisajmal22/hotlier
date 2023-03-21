@@ -131,24 +131,26 @@ final profileVM = Get.put(EditProfileViewModel());
                   height: 24,
                 ),
                 appButton(onTap: () async {
-                 Get.offAll(PresistentBottomBarItems());
-                  // if(loginController.formKey.currentState!.validate()){
+                 
+                  if(loginController.formKey.currentState!.validate()){
+                    loginController.loginWithFirebase();
                   //   showLoadingIndicator(context: context);
-                  //   bool? data = await loginController.onLogin();
+                  //   // bool? data = await loginController.onLogin();
                   //   hideOpenDialog(context: context);
                   //   print(data);
                   //   if(data == true){
-                  //  profileVM.getUserDetail();
-                   
+                      
+                  // //  profileVM.getUserDetail();
+                  //  Get.offAll(PresistentBottomBarItems());
                   //   print('success');
                   //   }
             
                    
                    
-                  // }
-                  // else {
-                  //   print('Error');
-                  // }
+                  }
+                  else {
+                    print('Error');
+                  }
                 }, 
                 widget: appText(
                   text: 'Login'

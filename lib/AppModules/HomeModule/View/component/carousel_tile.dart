@@ -9,8 +9,9 @@ import '../../../../common/size_config.dart';
 import '../../ViewModel/home_view_model.dart';
 
 class CarousalTile extends StatelessWidget {
-  CarousalTile({super.key});
+  CarousalTile({super.key, required this.name});
 final homeVM = Get.put(HomeViewModel());
+String name;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,7 +28,7 @@ final homeVM = Get.put(HomeViewModel());
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      appText(text: 'Hai, John', fontSize: 24, fontweight:  FontWeight.w700, textColor: AppColor.darkgrey),
+                      appText(text: 'Hi, $name', fontSize: 24, fontweight:  FontWeight.w700, textColor: AppColor.darkgrey),
                       appButton(onTap: (){
                         Get.to(NotificationView());
                       }, 
@@ -46,17 +47,25 @@ final homeVM = Get.put(HomeViewModel());
             SizedBox(
               height: SizeConfig.heightMultiplier * 20,
               child: PageView.builder(
+                pageSnapping: true,
+                allowImplicitScrolling: true,
                 controller: homeVM.controller,
-                onPageChanged: homeVM.carouselIndex,
+                onPageChanged: (value){
+                  homeVM.carouselIndex.value = value;
+                },
                 itemCount: homeVM.images.length,
                 itemBuilder: (context, index) {
-                
-                return Container(
-                  
-              margin: const EdgeInsets.symmetric(horizontal: 30),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    image: DecorationImage(image: NetworkImage(homeVM.images[index]), fit: BoxFit.cover)
+               
+                return Obx(
+                  ()=> AnimatedContainer(
+                    duration: const Duration(seconds: 1),
+                    curve: Curves.easeInOutCubic,
+                    
+                              margin: homeVM.carouselIndex == index ?  EdgeInsets.symmetric(horizontal:  20) : EdgeInsets.all(30),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      image: DecorationImage(image: NetworkImage(homeVM.images[index]), fit: BoxFit.cover)
+                    ),
                   ),
                 );
               },),
@@ -68,7 +77,8 @@ final homeVM = Get.put(HomeViewModel());
                  ()=> Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: List.generate(homeVM.images.length, (index) {
-                      return Container(
+                      return AnimatedContainer(
+                        duration: Duration(seconds: 1),
                       margin: const EdgeInsets.symmetric(horizontal: 6),
                     height: 8,
                     width: 8,

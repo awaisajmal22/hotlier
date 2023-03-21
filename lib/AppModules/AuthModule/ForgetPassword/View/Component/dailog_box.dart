@@ -18,7 +18,7 @@ class ForgetPasswordDailog extends StatelessWidget {
   String subtitle;
   String time;
   final forgetPasswordVM = Get.put(ForgetPasswordViewModel());
-
+  final pinFieldController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -65,7 +65,7 @@ class ForgetPasswordDailog extends StatelessWidget {
               height: 29,
             ),
             PinCodeTextField(
-              controller: forgetPasswordVM.pinFieldController,
+              controller: pinFieldController,
               
               showCursor: true,
               cursorColor: AppColor.cyan,
@@ -101,11 +101,11 @@ class ForgetPasswordDailog extends StatelessWidget {
               ),
                appButton(onTap: (){
               
-                  if(forgetPasswordVM.pinFieldController.value.text.isEmpty){
+                  if(pinFieldController.value.text.isEmpty){
                     // ShowMessage
                     ShowMessage().showErrorMessage('PLease Enter Pin Code');
                     print('Error');
-                  } else if(forgetPasswordVM.pinFieldController.value.text.length < 6){
+                  } else if(pinFieldController.value.text.length < 6){
                      ShowMessage().showErrorMessage('PLease Enter Valid Pin Code');
                   }
                   else {
